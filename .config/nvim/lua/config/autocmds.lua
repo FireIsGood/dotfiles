@@ -20,12 +20,18 @@ local color_columns = {
 }
 
 for type, width in pairs(color_columns) do
-  au("FileType", {
+  au({ "FileType", "BufEnter" }, {
     pattern = type,
     callback = function()
-      -- print("Changed width to " .. width)
-      vim.cmd("setlocal cc=" .. width)
-      vim.cmd("setlocal tw=" .. width)
+      -- print("Color columns at: " .. width)
+      vim.wo.colorcolumn = width
+
+      -- Only add text wrap if width can be a number
+      local wrap_width = tonumber(width)
+      if wrap_width ~= nil then
+        -- print("Text wrapped at: " .. wrap_width)
+        vim.bo.textwidth = wrap_width
+      end
     end,
   })
 end
