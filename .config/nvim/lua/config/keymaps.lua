@@ -110,6 +110,9 @@ map("i", "<C-_>", require("Comment.api").toggle.linewise.current, { desc = "Togg
 -- Code action hover
 map("n", "gh", vim.lsp.buf.hover, { desc = "Hover" })
 
+-- Git
+map({ "n" }, "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Preview this hunk" })
+
 -- Harpoon (commands set in plugin file)
 wk.register({ ["<leader>h"] = { name = "+Harpoon" } })
 map("n", "<leader>hh", "<cmd>HarpoonMenu<CR>", { desc = "Open the Harpoon menu" })
