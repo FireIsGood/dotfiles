@@ -1,12 +1,14 @@
 #! /bin/bash
 
-#? THIS FILE IS CALLED BY .bashrc
-#? Created by me, not the system. It's where I can put aliases and other settings for fun
+# NOTE: THIS FILE IS CALLED BY .bashrc
+# NOTE: Created by me, not the system. It's where I can put aliases and other settings for fun
+
+#!#### Fix Defaults ####!#
+alias mv='mv -i'
+alias rm='rm -i'
+alias cp='cp -i'
 
 #!#### Aliases ####!#
-
-# Reload bash source file
-alias reload='source ~/.bashrc'
 
 # Fancy ls alias (replace with eza) and shorter version
 alias ls='eza --no-time --no-user --icons -hbF'
@@ -22,9 +24,6 @@ alias zah='zoxide add ./'
 # Shorter clear command
 alias c='clear'
 
-# Shorter history command
-alias h='history'
-
 # Shorter sudo end
 alias sudover='sudo -k'
 
@@ -36,8 +35,10 @@ alias f="fc -s"
 
 #* Program specific *#
 
-# Shorter git command
+# Shorter git commands
 alias g='git'
+alias gs='git status'
+alias gd='git diff'
 
 # Future fire, this is for a meme.
 daniel() {
