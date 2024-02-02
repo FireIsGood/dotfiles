@@ -1,0 +1,1 @@
+{"plnv":{"body":"println!(\"{}\", ${1:var});","prefix":"plnv"},"fmt":{"prefix":"fmt","body":"format!(\"\");"},"plnvd":{"body":"println!(\"{:?}\", ${1:var});","prefix":"plnvd"}}

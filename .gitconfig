@@ -1,0 +1,31 @@
+[user]
+name = FireIsGood
+email = fireisadequate@gmail.com
+signingkey = 0ACFEAD4981C92DF
+
+[url "git@github.com:"]
+insteadOf = "https://github.com/"
+
+[commit]
+template = ~/.git-commit-message
+gpgsign = true
+
+[core]
+editor = "nvim"
+
+[init]
+defaultBranch = main
+
+[interactive]
+singleKey = true
+
+[alias]
+tree = log --graph --all --oneline --format=format:'%x09%C(auto)%h%C(auto)%d %s'
+patch = add --patch
+head = tree -10
+
+[credential "https://github.com"]
+helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+helper = !/usr/bin/gh auth git-credential

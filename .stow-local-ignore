@@ -1,0 +1,8 @@
+# Version control
+\.git
+\.gitignore
+
+# Any GitHub helpful files
+^/README.*
+^/LICENSE.*
+^/COPYING
