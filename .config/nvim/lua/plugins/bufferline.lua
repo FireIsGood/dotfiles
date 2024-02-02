@@ -4,7 +4,7 @@ return {
     local bufferline = require("bufferline")
     return {
       options = {
-        -- always_show_bufferline = true,
+        always_show_bufferline = false,
         show_buffer_close_icons = false,
         separator_style = "slope",
         style_preset = {
