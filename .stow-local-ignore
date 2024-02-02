@@ -3,6 +3,7 @@
 \.gitignore
 
 # Any GitHub helpful files
+stow/
 ^/README.*
 ^/LICENSE.*
 ^/COPYING

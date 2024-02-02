@@ -11,6 +11,8 @@ The files that you're probably interested are:
 - [bash aliases](.bash_aliases)
 - [Starship prompt](/.config/starship.toml)
 
+![](/stow/starship_prompt.png)
+
 ## What are "dotfiles?"
 
 Some bullet points from pseudometa's [.config repository](https://github.com/chrisgrieser/.config):
