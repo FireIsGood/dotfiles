@@ -87,6 +87,9 @@ alias gdb="gdb -q"
 alias v="nvim"
 # alias nv="nvim"
 
+# vi (clean so it lazy doesn't yell)
+alias vi="vi --clean"
+
 # Tmux
 alias ta="tmux attach"
 
