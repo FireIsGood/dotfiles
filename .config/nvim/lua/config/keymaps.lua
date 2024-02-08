@@ -157,10 +157,10 @@ map({ "o", "x" }, "ae", "<cmd>lua require('various-textobjs').entireBuffer()<CR>
 wk.register({ ["<leader>w"] = { name = "+workspaces/sessions" } })
 
 -- Workspaces
-map("n", "<leader>wl", "<cmd>WorkspacesList<CR>", { desc = "List workspaces" })
-map("n", "<leader>wo", "<cmd>Telescope workspaces<CR>", { desc = "Open workspace" })
-map("n", "<leader>wa", ":WorkspacesAdd ", { desc = "Add workspace" })
-map("n", "<leader>wr", ":WorkspacesRename ", { desc = "Rename workspace" })
+map("n", "<leader>wl", "<cmd>WorkspacesList<CR>", { desc = "List workspaces" }) -- List workspaces (for debugging)
+map("n", "<leader>wo", "<cmd>Telescope workspaces<CR>", { desc = "Open workspace" }) -- Telescopes all workspaces (favorite!)
+map("n", "<leader>wa", ":WorkspacesAdd ", { desc = "Add workspace" }) -- Adds a workspace (type the name)
+map("n", "<leader>wr", ":WorkspacesRename ", { desc = "Rename workspace" }) -- Rename workspaces (for debugging)
 
 -- Sessions
-map("n", "<leader>ws", "<cmd>SessionsSave<CR>", { desc = "Save session" })
+map("n", "<leader>ws", "<cmd>SessionsSave<CR>", { desc = "Save session" }) -- Start saving a session of the current folder
