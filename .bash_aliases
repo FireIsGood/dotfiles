@@ -11,7 +11,7 @@ alias cp='cp -i'
 #!#### Aliases ####!#
 
 # Fancy ls alias (replace with eza) and shorter version
-alias ls='eza --no-time --no-user --icons -hbF'
+alias ls='eza --group-directories-first --no-time --no-user --icons -hbF'
 alias l='ls'      # Compact
 alias la='ls'     # All files
 alias ll='ls -l'  # List view
