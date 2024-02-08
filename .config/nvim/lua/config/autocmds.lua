@@ -47,3 +47,12 @@ end
 --     end
 --   end,
 -- })
+
+-- Reset scroll offset in Aerial window
+au({ "FileType", "BufEnter" }, {
+  pattern = "aerial",
+  callback = function()
+    print("Funny")
+    vim.wo.scrolloff = 0
+  end,
+})

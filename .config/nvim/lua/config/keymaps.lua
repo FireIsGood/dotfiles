@@ -101,6 +101,9 @@ map("n", "<leader>>", "<cmd>BufferLineMoveNext<CR>", { desc = "Move buffer right
 
 --[[ Plugins ]]
 
+-- Aerial
+map({ "n" }, "<leader>a", "<cmd>AerialToggle<CR>", { desc = "Open symbol outline" })
+
 -- Oil (file management via buffer) BUT IT'S BROKEN RIGHT NOW
 -- map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory", silent = true })
 
