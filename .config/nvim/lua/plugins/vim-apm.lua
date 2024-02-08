@@ -1,3 +1,6 @@
+if true then
+  return {}
+end
 return {
   "ThePrimeagen/vim-apm",
   config = function()
