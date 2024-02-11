@@ -1,0 +1,20 @@
+gui:
+  # stuff relating to the UI
+  expandFocusedSidePanel: true
+  mainPanelSplitMode: "vertical" # one of 'horizontal' | 'flexible' | 'vertical'
+  showRandomTip: false
+  showBottomLine: false # for hiding the bottom information line (unless it has important information to tell you)
+  showCommandLog: false
+  nerdFontsVersion: "3" # nerd fonts version to use ("2" or "3"); empty means don't show nerd font icons
+  border: "single" # one of 'single' | 'double' | 'rounded' | 'hidden'
+git:
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --"
+  # branchLogCmd: "git log --graph --color=always --all --oneline --format=format:'%x09%C(auto)%h%C(auto)%d %s' {{branchName}} --"
+# determines whether hitting 'esc' will quit the application when there is nothing to cancel/close
+quitOnTopLevelReturn: true
+notARepository: "quit" # one of: 'prompt' | 'create' | 'skip' | 'quit'
+promptToReturnFromSubprocess: true # display confirmation when subprocess terminates
+keybinding:
+  universal:
+    quit-alt1: "<c-q>" # alternative/alias of quit
+    return: "<c-c>" # return to previous menu, will quit if there's nowhere to return
