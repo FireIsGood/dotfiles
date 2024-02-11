@@ -6,6 +6,11 @@ return {
       highlighter = {
         auto_enable = true,
         lsp = true,
+        filetypes = {
+          "css",
+          "astro",
+          "svelte",
+        },
       },
     })
   end,
