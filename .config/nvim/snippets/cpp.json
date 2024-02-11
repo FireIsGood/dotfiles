@@ -1,0 +1,1 @@
+{"#header_guard":{"prefix":"#header_guard","body":["#ifndef ${1:HEADER_H}","#define $1","","#endif \/\/ $1"]}}
