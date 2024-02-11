@@ -120,10 +120,10 @@ map({ "n" }, "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Preview t
 wk.register({ ["<leader>h"] = { name = "+Harpoon" } })
 map("n", "<leader>hh", "<cmd>HarpoonMenu<CR>", { desc = "Open the Harpoon menu" })
 map("n", "<leader>ha", "<cmd>HarpoonAddFile<CR>", { desc = "Add the current file to Harpoon" })
-map("n", "<leader>j", "<cmd>HarpoonBuffer 1<CR>", { desc = "Go to buffer 1" })
-map("n", "<leader>k", "<cmd>HarpoonBuffer 2<CR>", { desc = "Go to buffer 2" })
-map("n", "<leader>l", "<cmd>HarpoonBuffer 3<CR>", { desc = "Go to buffer 3" })
-map("n", "<leader>;", "<cmd>HarpoonBuffer 4<CR>", { desc = "Go to buffer 4" })
+map("n", "<M-j>", "<cmd>HarpoonBuffer 1<CR>", { desc = "Go to buffer 1" })
+map("n", "<M-k>", "<cmd>HarpoonBuffer 2<CR>", { desc = "Go to buffer 2" })
+map("n", "<M-l>", "<cmd>HarpoonBuffer 3<CR>", { desc = "Go to buffer 3" })
+map("n", "<M-;>", "<cmd>HarpoonBuffer 4<CR>", { desc = "Go to buffer 4" })
 
 -- Scissors
 wk.register({ ["<leader>i"] = { name = "+Snippets" } })
