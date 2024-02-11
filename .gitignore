@@ -1,0 +1,2 @@
+# Files that should be local to the machine
+.config/lazygit/state.yml
