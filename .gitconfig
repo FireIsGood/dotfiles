@@ -7,7 +7,7 @@ signingkey = 0ACFEAD4981C92DF
 insteadOf = "https://github.com/"
 
 [commit]
-template = ~/.git-commit-message
+template = ~/.config/git/.git-commit-message
 gpgsign = true
 
 [core]
