@@ -16,7 +16,7 @@ opt.expandtab = true
 -- Show trailing whitespace but fancy
 opt.list = true
 vim.opt.listchars = {
-  tab = "> ",
+  tab = "→ ",
   trail = "╳",
   nbsp = "+",
 }
