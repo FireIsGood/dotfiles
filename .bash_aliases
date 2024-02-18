@@ -70,7 +70,7 @@ alias ba='bacon' # Short
 
 # YT-DLP
 alias yt='yt-dlp --embed-metadata'
-alias yta='yt-dlp --embed-metadata -x -f ba/b'
+alias yta='yt-dlp --embed-metadata --embed-thumbnail -x -f ba/b'
 function ytb() {
 	'yt $@'
 	'yta $@'
