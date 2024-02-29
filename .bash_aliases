@@ -33,6 +33,16 @@ alias aptup='sudo apt update && sudo apt upgrade && sudo -k'
 # Redo quickly command
 alias f="fc -s"
 
+# Fuzzy find man pages
+alias fm="fman"
+function fman() {
+	if [ ${1} ]; then
+		man ${1}
+	else
+		compgen -c | fzf | xargs man
+	fi
+}
+
 #* Program specific *#
 
 function ya() {
