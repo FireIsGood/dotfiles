@@ -13,7 +13,7 @@ alias cp='cp -i'
 # Fancy ls alias (replace with eza) and shorter version
 alias ls='eza --group-directories-first --no-time --no-user --icons -hbF'
 alias l='ls'      # Compact
-alias la='ls'     # All files
+alias la='ls -a'  # All files
 alias ll='ls -l'  # List view
 alias lla='ll -a' # List view all files
 
@@ -70,7 +70,7 @@ alias ba='bacon' # Short
 
 # YT-DLP
 alias yt='yt-dlp --embed-metadata'
-alias yta='yt-dlp --embed-metadata --embed-thumbnail -x -f ba/b'
+alias yta='yt-dlp --extract-audio --embed-metadata --embed-thumbnail --audio-format mp3 --audio-quality 0 --format ba/b'
 function ytb() {
 	'yt $@'
 	'yta $@'
