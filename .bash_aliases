@@ -70,7 +70,7 @@ alias ba='bacon' # Short
 
 # YT-DLP
 alias yt='yt-dlp --embed-metadata'
-alias yta='yt-dlp --extract-audio --embed-metadata --embed-thumbnail --audio-format mp3 --audio-quality 0 --format ba/b'
+alias yta='yt-dlp --extract-audio --embed-metadata --embed-thumbnail --audio-format mp3 --audio-quality 0 --format ba/b --sponsorblock-remove all'
 function ytb() {
 	'yt $@'
 	'yta $@'
