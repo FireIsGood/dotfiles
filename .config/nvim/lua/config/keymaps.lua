@@ -107,6 +107,9 @@ map({ "n" }, "<leader>a", "<cmd>AerialToggle<CR>", { desc = "Open symbol outline
 -- Oil (file management via buffer) BUT IT'S BROKEN RIGHT NOW
 -- map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory", silent = true })
 
+-- Carbon Now (pretty code screenshots)
+map("v", "<leader>cn", ":CarbonNow<CR>", { desc = "Screenshot", silent = true })
+
 -- Comment with / in insert mode
 map("i", "<C-_>", require("Comment.api").toggle.linewise.current, { desc = "Toggle line as comment" })
 
