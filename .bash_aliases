@@ -36,11 +36,24 @@ alias f="fc -s"
 # Fuzzy find man pages
 alias fm="fman"
 function fman() {
-	if [ ${1} ]; then
-		man ${1}
-	else
-		compgen -c | fzf | xargs man
-	fi
+	# FZF possible commands. Add query if given
+	local CHOICE=$(compgen -c | fzf --query=${1})
+
+	# If there's no input, exit
+	[[ ${CHOICE} = "" ]] && echo "Canceled" && return
+
+	# Try to display a man page, otherwise try to show a TLDR page
+	man $CHOICE 2>/dev/null
+
+	# If we found a Man page, exit
+	[[ $? = 0 ]] && return
+	echo "No Man page, trying TLDR:"
+
+	tldr $CHOICE
+
+	# If we found a TLDR page, exit
+	[[ $? = 0 ]] && return
+	echo "Oh dear, there's no Man or TLDR page"
 }
 
 #* Program specific *#
