@@ -47,13 +47,13 @@ function fman() {
 
 	# If we found a Man page, exit
 	[[ $? = 0 ]] && return
-	echo "No Man page, trying TLDR:"
+	echo -e "Oh man, there's no Man!\nTrying TLDR:\n"
 
 	tldr $CHOICE
 
 	# If we found a TLDR page, exit
 	[[ $? = 0 ]] && return
-	echo "Oh dear, there's no Man or TLDR page"
+	echo "Oh man, there's no Man or TLDR page"
 }
 
 #* Program specific *#
