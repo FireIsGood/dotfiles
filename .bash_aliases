@@ -34,8 +34,9 @@ alias aptup='sudo apt update && sudo apt upgrade && sudo -k'
 alias f="fc -s"
 
 # Fuzzy find man pages
+alias fman="superman"
 alias fm="fman"
-function fman() {
+function superman() {
 	# FZF possible commands. Add query if given
 	local CHOICE=$(compgen -c | fzf --query=${1})
 
@@ -47,13 +48,15 @@ function fman() {
 
 	# If we found a Man page, exit
 	[[ $? = 0 ]] && return
-	echo -e "Oh man, there's no Man!\nTrying TLDR:\n"
 
+	echo -e "Oh man, there's no Man!\nTrying TLDR:"
 	tldr $CHOICE
 
 	# If we found a TLDR page, exit
 	[[ $? = 0 ]] && return
-	echo "Oh man, there's no Man or TLDR page"
+
+	# No one can save you now...
+	echo -e "Oh man, there's no Man or TLDR page!\nWelp, guess you're on your own!"
 }
 
 #* Program specific *#
