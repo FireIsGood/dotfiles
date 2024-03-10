@@ -19,6 +19,8 @@ return {
       watermark = false,
       width = "680",
       window_theme = "round",
+      padding_horizontal = "30px",
+      padding_vertical = "30px",
     },
   },
 }
