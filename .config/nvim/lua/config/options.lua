@@ -18,7 +18,7 @@ opt.list = true
 vim.opt.listchars = {
   tab = "→ ",
   trail = "╳",
-  nbsp = "+",
+  nbsp = "⎵",
 }
 
 -- Use a register for the clipboard
