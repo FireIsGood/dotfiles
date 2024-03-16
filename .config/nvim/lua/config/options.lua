@@ -3,6 +3,9 @@
 --         --
 local opt = vim.opt
 
+-- Scroll offset
+opt.scrolloff = 15
+
 -- Stop hiding stuff in markdown
 opt.conceallevel = 0
 
