@@ -8,13 +8,14 @@ local au = vim.api.nvim_create_autocmd
 local color_columns = {
   ["gitcommit"] = "72",
   ["help"] = "0",
-  ["markdown"] = "80",
+  ["markdown"] = "120", -- Based on prettier settings!
   -- Languages
   ["asm"] = "0",
   ["c"] = "80",
   ["cpp"] = "80",
-  ["css"] = "80",
-  ["svelte"] = "80",
+  ["html"] = "120", -- Based on prettier settings!
+  ["css"] = "120", -- Based on prettier settings!
+  ["svelte"] = "120", -- Based on prettier settings!
   ["lua"] = "120",
   ["rust"] = "100",
 }
