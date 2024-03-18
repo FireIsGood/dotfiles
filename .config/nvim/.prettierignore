@@ -1,0 +1,6 @@
+# Code snippets
+snippets/
+
+# Unused json stuff
+lazy-lock.json
+lazyvim.json
