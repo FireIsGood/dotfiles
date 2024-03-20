@@ -10,6 +10,9 @@ insteadOf = "https://github.com/"
 template = ~/.config/git/.git-commit-message
 gpgsign = true
 
+[pull]
+rebase = true
+
 [core]
 editor = "nvim"
 
