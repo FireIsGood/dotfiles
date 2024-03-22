@@ -66,7 +66,7 @@ map("n", "<C-c>", EscapeInNorm, {})
 map("i", "<esc>", "<cmd>noh<CR><esc>", { desc = "Escape and clear hlsearch" })
 map("i", "<C-c>", "<cmd>noh<CR><C-c>", { desc = "Escape and clear hlsearch" })
 
--- More powerful J and K (use {} for paragraph jumps)
+-- More powerful J and K (use 6j/6k)
 -- Via Pseudometa (https://nanotipsforvim.prose.sh/motion-setup--hjkl-as-amplified-hjkl)
 map({ "n", "x" }, "<S-j>", "6j")
 map({ "n", "x" }, "<S-k>", "6k")
