@@ -17,7 +17,7 @@
 [30C[0m[1m┌───────────────────────────────────────────┐[0m
 [30C[0m[34m[1m  OS[0m[0m:[0m       Kubuntu trixie/sid (mantic)[0m
 [30C[0m[34m[1m  Host[0m[0m:[0m     Laptop AB[0m
-[30C[0m[34m[1m  Kernel[0m[0m:[0m   6.5.0-14-generic[0m
+[30C[0m[34m[1m  Kernel[0m[0m:[0m   6.5.0-26-generic[0m
 [30C[0m[34m[1m  Packages[0m[0m:[0m too many[0m
 [30C[0m[34m[1m  Shell[0m[0m:[0m    zsh 5.9[0m
 [30C[0m[34m[1m  Terminal[0m[0m:[0m alacritty[0m
