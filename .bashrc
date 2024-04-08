@@ -55,6 +55,8 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 # brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+export PATH=/home/fireisgood/.nimble/bin:$PATH
+
 # ghcup (Haskell)
 [ -f "/home/fireisgood/.ghcup/env" ] && source "/home/fireisgood/.ghcup/env" # ghcup-env
 

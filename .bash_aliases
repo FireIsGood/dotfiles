@@ -175,7 +175,9 @@ PROMPT_DIRTRIM=3
 # Turn off ctrl+r for vscode moments
 # bind -r "\C-r"
 
+# Add stuff to the PATH
 # export PATH=$PATH:/home/fireisgood/.cargo/bin
+export PATH=/home/fireisgood/.nimble/bin:$PATH
 
 # Enable TheFuck (use "fuck" to fix previous command)
 eval "$(thefuck --alias)"
