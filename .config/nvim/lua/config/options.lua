@@ -8,6 +8,7 @@ opt.scrolloff = 15
 
 -- Stop hiding stuff in markdown
 opt.conceallevel = 0
+opt.concealcursor = "n"
 
 -- Default tab sizes
 opt.tabstop = 4
