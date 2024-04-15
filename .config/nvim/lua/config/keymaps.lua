@@ -117,6 +117,12 @@ map("i", "<C-_>", require("Comment.api").toggle.linewise.current, { desc = "Togg
 -- Code action hover
 map("n", "gh", vim.lsp.buf.hover, { desc = "Hover" })
 
+-- Devdocs
+wk.register({ ["<leader>d"] = { name = "+DevDocs" } })
+map("n", "<leader>dd", "<cmd>DevdocsOpenCurrentFloat<CR>", { desc = "Open DevDocs search (current language)" })
+map("n", "<leader>ds", "<cmd>DevdocsOpenFloat<CR>", { desc = "Open DevDocs search (all languages)" })
+map("n", "<leader>du", "<cmd>DevdocsUpdate<CR>", { desc = "Update DevDocs" })
+
 -- Git
 map({ "n" }, "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Preview this hunk" })
 
