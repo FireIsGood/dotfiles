@@ -31,7 +31,9 @@ alias sudover='sudo -k'
 alias aptup='sudo apt update && sudo apt upgrade && sudo -k'
 
 # Redo quickly command
-alias f="fc -s"
+function f() {
+	fc -s
+}
 
 # Fuzzy find man pages
 alias fman="superman"
