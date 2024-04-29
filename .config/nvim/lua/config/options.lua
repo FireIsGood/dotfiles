@@ -11,7 +11,7 @@ opt.conceallevel = 0
 opt.concealcursor = "n"
 
 -- Default tab sizes
-opt.tabstop = 4
+opt.tabstop = 2
 opt.shiftwidth = 0 -- use tabstop
 opt.softtabstop = 4
 opt.shiftround = true
