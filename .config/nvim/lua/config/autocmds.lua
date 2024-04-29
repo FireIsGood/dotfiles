@@ -10,6 +10,7 @@ local color_columns = {
   ["help"] = "0",
   ["markdown"] = "120", -- Based on prettier settings!
   -- Languages
+  ["astro"] = "120", -- Based on prettier settings!
   ["asm"] = "0",
   ["c"] = "80",
   ["cpp"] = "80",
