@@ -31,9 +31,14 @@ map("o", "N", "'nN'[v:searchforward].'zz'", { expr = true, desc = "Prev search r
 -- lazy
 map("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
+-- lazygit
+map("n", "<leader>gg", function()
+  Util.terminal({ "lazygit" }, { cwd = vim.loop.cwd(), esc_esc = false, ctrl_hjkl = false, border = "rounded" })
+end, { desc = "Lazygit" })
+
 -- floating terminal
 local lazyterm = function()
-  Util.terminal(nil, { cwd = Util.root(), border = "rounded", size = { width = 0.8, height = 0.8 } })
+  Util.terminal(nil, { cwd = vim.loop.cwd(), border = "rounded", size = { width = 0.8, height = 0.8 } })
 end
 map("n", "<c-/>", lazyterm, { desc = "Terminal (root dir)" })
 map("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
@@ -93,6 +98,14 @@ end, { desc = "Check if the pwd is a git repo" })
 
 -- Open the current working directory
 map({ "n" }, "<leader>o", "<cmd>!open $PWD<CR><CR>", { desc = "Open PWD in a file explorer" })
+
+local vim_save = function()
+  vim.cmd("wa")
+end
+
+cmd("W", vim_save, { desc = "Save all (shortcut)" })
+cmd("Wa", vim_save, { desc = "Save all (shortcut)" })
+cmd("WA", vim_save, { desc = "Save all (shortcut)" })
 
 --[[ Buffers ]]
 
