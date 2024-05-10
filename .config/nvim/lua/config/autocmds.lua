@@ -12,7 +12,8 @@ local color_columns = {
   -- Languages
   ["astro"] = "120", -- Based on prettier settings!
   ["asm"] = "0",
-  ["c"] = "80",
+  -- ["c"] = "80",
+  ["c"] = "120",
   ["cpp"] = "80",
   ["html"] = "120", -- Based on prettier settings!
   ["css"] = "120", -- Based on prettier settings!
