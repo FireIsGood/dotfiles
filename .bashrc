@@ -55,6 +55,10 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 # brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# pipx
+export PATH=/home/fireisgood/.local/bin$PATH
+
+# nimble (nim)
 export PATH=/home/fireisgood/.nimble/bin:$PATH
 
 # ghcup (Haskell)

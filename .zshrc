@@ -68,11 +68,16 @@ source ~/.bash_aliases
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
+# PATH VARIABLES
+
 # brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Haskell
 [ -f "/home/fireisgood/.ghcup/env" ] && source "/home/fireisgood/.ghcup/env" # ghcup-env
+
+# pipx
+export PATH="$HOME/.local/bin:$PATH"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
