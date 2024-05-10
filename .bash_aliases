@@ -138,6 +138,9 @@ alias sl='sl -ael'
 # matrix alias (opens a new terminal on top)
 alias matrix='konsole --profile=MATRIX --hide-menubar --hide-tabbar --fullscreen --separate -e cmatrix -u 10'
 
+# HTTP server on the fun port with no cache
+alias htp='http-server --port 1625 -c-1'
+
 #* Functions *#
 
 # Add a pasted file
