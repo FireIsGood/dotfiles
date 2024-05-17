@@ -22,7 +22,7 @@ $time\
 $sudo\
 $cmd_duration\
 [▙ ](fg:mantle)\
-[🮲🮳](fg:overlay0)\
+${custom.nix}\
 \n$character\
 """
 
@@ -147,3 +147,15 @@ surface0 = "#363a4f"
 base = "#24273a"
 mantle = "#1e2030"
 crust = "#181926"
+
+#####
+
+# Nix shell
+[custom.nix]
+command = """
+NIX="${IN_NIX_SHELL}"; [[ "$NIX" ]] && echo "🮲🮳"\
+"""
+style = "fg:overlay0"
+when = true
+shell = ["bash", "--noprofile", "--norc"]
+format = "[$output]($style)"
