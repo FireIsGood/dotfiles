@@ -2,7 +2,7 @@
 source <(/usr/local/bin/starship init zsh --print-full-init)
 
 #
-# --- ZINIT ---
+# --- PACKAGE MANAGER ---
 #
 
 # Bootstrap Zinit
