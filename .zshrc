@@ -24,14 +24,9 @@ zinit light Aloxaf/fzf-tab
 # Add in snippets
 zinit snippet OMZP::command-not-found
 
-# Load completions
-autoload -Uz compinit && compinit
-zinit cdreplay -q
-
-# Keybindings
-bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
+#
+# --- Shell settings ---
+#
 
 # History
 HISTSIZE=20000
@@ -53,21 +48,30 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Aliases
-[[ ! -f ~/.bash_aliases ]] || source ~/.bash_aliases
-
-# Shell integrations
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
-
 # Pagers
 export PAGER="nvim"
 export GIT_PAGER="less"
 export LESS='-RF'
 
 #
+# --- Keybindings ---
+#
+
+# Shell keybinds
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+# Aliases
+[[ ! -f ~/.bash_aliases ]] || source ~/.bash_aliases
+
+#
 # --- OTHER ---
 #
+
+# Shell integrations
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # Fake neofetch
 # Do the funny if not in vscode or neovim
