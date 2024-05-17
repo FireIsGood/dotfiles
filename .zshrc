@@ -1,5 +1,4 @@
 # PATH related
-export PATH=$HOME/bin:/usr/local/bin:$PATH
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 [ -f "/home/fireisgood/.ghcup/env" ] && source "/home/fireisgood/.ghcup/env" # ghcup-env
 
