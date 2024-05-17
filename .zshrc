@@ -1,3 +1,8 @@
+# PATH related
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+[ -f "/home/fireisgood/.ghcup/env" ] && source "/home/fireisgood/.ghcup/env" # ghcup-env
+
 # Init starship
 source <(/usr/local/bin/starship init zsh --print-full-init)
 
