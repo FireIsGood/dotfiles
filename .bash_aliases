@@ -124,6 +124,7 @@ alias vgf="valgrind --leak-check=full --track-origins=yes"
 alias gdb="gdb -q"
 
 # Neovim
+alias nvim="~/.local/bin/nvim.appimage"
 alias v="nvim"
 # alias nv="nvim"
 
