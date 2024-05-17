@@ -35,6 +35,9 @@ function f() {
 	fc -s
 }
 
+# Quickly edit history
+alias vzh="nvim ~/.zsh_history"
+
 # Fuzzy find man pages
 alias fman="superman"
 alias fm="fman"
