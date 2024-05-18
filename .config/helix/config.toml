@@ -1,0 +1,42 @@
+theme = "cat"
+
+[editor]
+scrolloff = 15
+line-number = "relative"
+cursorline = true
+bufferline = "always"
+rulers = [120]
+
+[editor.statusline]
+left = [ "mode", "file-name", "separator", "spacer", "diagnostics", ]
+center = []
+right = ["file-type", "separator", "spacer", "position-percentage", "spacer", "position"]
+separator = "|"
+mode.normal = "NORMAL"
+mode.select = "SELECT"
+mode.insert = "INSERT"
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "block"
+
+[editor.indent-guides]
+character = "╎"
+render = true
+
+[keys.normal]
+C-c = "no_op"
+C-7 = "toggle_comments"
+H = "goto_previous_buffer"
+L = "goto_next_buffer"
+S-j = ["move_visual_line_down","move_visual_line_down","move_visual_line_down","move_visual_line_down","move_visual_line_down","move_visual_line_down"]
+S-k = ["move_visual_line_up","move_visual_line_up","move_visual_line_up","move_visual_line_up","move_visual_line_up","move_visual_line_up"]
+C-r = "redo"
+"space"."c"."r" = ":config-reload"
+# Leader-like commands
+[keys.normal.space]
+q.q = ":write-quit-all"
+
+[keys.insert]
+C-c = "normal_mode"
