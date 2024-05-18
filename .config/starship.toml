@@ -4,6 +4,7 @@ palette = "catppuccin_macchiato"
 # Format string
 format = """
 [▐](fg:base bg:yellow)\
+[ 󰈺](fg:base bg:yellow)\
 $username\
 $hostname\
 [▙ ](fg:yellow bg:blue)\
