@@ -153,8 +153,12 @@ crust = "#181926"
 
 # Nix shell
 [custom.nix]
-command = """
-NIX="${IN_NIX_SHELL}"; [[ "$NIX" ]] && echo "🮲🮳"\
+command = """NIX="${IN_NIX_SHELL}";
+if [[ "$NIX" ]]; then
+  echo "󱄅 𝒏𝒊𝒙 𝒈𝒂𝒎 𝒊𝒏𝒈"
+else
+  echo "🮲🮳 "
+fi
 """
 style = "fg:overlay0"
 when = true
