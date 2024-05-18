@@ -113,6 +113,11 @@ cmd("WA", vim_save, { desc = "Save all (shortcut)" })
 map("n", "<leader><", "<cmd>BufferLineMovePrev<CR>", { desc = "Move buffer left", silent = true })
 map("n", "<leader>>", "<cmd>BufferLineMoveNext<CR>", { desc = "Move buffer right", silent = true })
 
+-- Closing
+map("n", "<leader>bd", function()
+  MiniBufremove.delete()
+end, { desc = "Close current buffer" })
+
 --[[ Plugins ]]
 
 -- Aerial
