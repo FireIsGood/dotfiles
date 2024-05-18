@@ -1,12 +1,13 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.editor.aerial",
     "lazyvim.plugins.extras.editor.leap",
     "lazyvim.plugins.extras.formatting.prettier",
-    "lazyvim.plugins.extras.lsp.none-ls",
-    "lazyvim.plugins.extras.editor.aerial"
+    "lazyvim.plugins.extras.lang.typescript",
+    "lazyvim.plugins.extras.lsp.none-ls"
   ],
   "news": {
-    "NEWS.md": "4828"
+    "NEWS.md": "4885"
   },
   "version": 3
 }
