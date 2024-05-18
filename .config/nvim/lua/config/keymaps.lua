@@ -180,7 +180,12 @@ map("n", "<leader>fu", require("undotree").toggle, { desc = "Undo tree", silent 
 
 -- Various Text Objects (basically just Entire Buffer)
 -- Select all text
-map({ "o", "x" }, "ae", "<cmd>lua require('various-textobjs').entireBuffer()<CR>")
+local vto = require("various-textobjs")
+-- stylua: ignore start
+map({ "o", "x" }, "ae", function() vto.entireBuffer() end, { desc = "the entire buffer", silent = true })
+map({ "o", "x" }, "iq", function() vto.anyQuote("inner") end, { desc = "a quote", silent = true })
+map({ "o", "x" }, "aq", function() vto.anyQuote("outer") end, { desc = "a quote", silent = true })
+-- stylua: ignore end
 
 --
 --[[ Workspaces and Sessions ]]
