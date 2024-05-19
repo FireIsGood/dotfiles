@@ -141,6 +141,9 @@ map("n", "<leader>dd", "<cmd>DevdocsOpenCurrentFloat<CR>", { desc = "Open DevDoc
 map("n", "<leader>ds", "<cmd>DevdocsOpenFloat<CR>", { desc = "Open DevDocs search (all languages)" })
 map("n", "<leader>du", "<cmd>DevdocsUpdate<CR>", { desc = "Update DevDocs" })
 
+-- Easy Commands
+map("n", "<leader>t", "<cmd>Telescope commands<CR>", { desc = "Open easy commands", noremap = true })
+
 -- Git
 map({ "n" }, "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Preview this hunk" })
 
