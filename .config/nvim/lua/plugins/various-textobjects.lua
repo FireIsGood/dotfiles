@@ -4,7 +4,7 @@ return {
   opts = {
     -- lookForwardSmall = 0,
     -- lookForwardBig = 0,
-    useDefaultKeymaps = true,
+    useDefaultKeymaps = false,
     notifyNotFound = false,
   },
 }
