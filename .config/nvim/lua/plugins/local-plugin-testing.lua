@@ -1,12 +1,10 @@
 return {
   -- Meme plugins
   {
-    dir = "~/Documents/Programming/nvim-fish-plugin",
-    lazy = false,
+    dir = "~/Documents/Programming/pond.nvim",
     config = function()
-      require("nvim-fish-plugin").setup({
-        name = "Friendly Angler",
-        power = 400,
+      require("pond-nvim").setup({
+        name = "FireIsFisher",
         customFish = { "Bass", "Jellyfish" },
       })
     end,
@@ -15,6 +13,12 @@ return {
   {
     -- dir = "~/Documents/Programming/nvim-clear-registers",
     "FireIsGood/nvim-clear-registers",
+    lazy = false,
+    config = true,
+  },
+  {
+    dir = "~/Documents/Programming/better-comments.nvim",
+    -- "FireIsGood/better-comments.nvim",
     lazy = false,
     config = true,
   },
