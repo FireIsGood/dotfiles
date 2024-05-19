@@ -121,7 +121,7 @@ end, { desc = "Close current buffer" })
 --[[ Plugins ]]
 
 -- Aerial
-map({ "n" }, "<leader>a", "<cmd>AerialToggle<CR>", { desc = "Open symbol outline" })
+map({ "n" }, "<leader>co", "<cmd>AerialToggle<CR>", { desc = "Open symbol outline" })
 
 -- Oil (file management via buffer) BUT IT'S BROKEN RIGHT NOW
 -- map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory", silent = true })
