@@ -7,6 +7,9 @@ return {
         hooks = {
           open_pre = function()
             vim.cmd("SessionsStop") -- Stops recording the session
+            if #vim.api.nvim_list_wins() > 1 then
+              vim.cmd("winc h") -- Go to a real buffer (get outta the file explorer!)
+            end
             vim.cmd("silent %bdelete!") -- Closes all tabs
           end,
           open = function()
