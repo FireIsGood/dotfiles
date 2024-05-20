@@ -26,6 +26,7 @@ singleKey = true
 tree = log --graph --all --oneline --format=format:'%x09%C(auto)%h%C(auto)%d %s'
 patch = add --patch
 head = tree -10
+undo = reset HEAD~1 --mixed
 
 [credential "https://github.com"]
 helper = !/usr/bin/gh auth git-credential
