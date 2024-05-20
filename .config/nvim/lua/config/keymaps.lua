@@ -114,7 +114,9 @@ map({ "n" }, "<leader>co", "<cmd>AerialToggle<CR>", { desc = "Open symbol outlin
 map({ "n" }, "<C-y>", require("cmp").mapping.complete, { desc = "Select completion" })
 
 -- Oil (file management via buffer) BUT IT'S BROKEN RIGHT NOW
--- map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory", silent = true })
+map("n", "-", function()
+  require("oil").open_float(nil)
+end, { desc = "Open parent directory", silent = true })
 
 -- Carbon Now (pretty code screenshots)
 map("v", "<leader>cn", ":CarbonNow<CR>", { desc = "Screenshot", silent = true })
