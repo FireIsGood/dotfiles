@@ -60,9 +60,8 @@ map("n", "M", "J", { desc = "Merge" })
 
 -- Funny esc meme
 local EscapeInNorm = function()
-  local keys = vim.api.nvim_replace_termcodes("<cmd>noh<cr><esc>", true, false, true)
-  vim.api.nvim_feedkeys(keys, "n", true)
-  print("There is no escape.")
+  vim.cmd("noh")
+  vim.api.nvim_feedkeys("", "n", true)
 end
 map("n", "<esc>", EscapeInNorm, {})
 map("n", "<C-c>", EscapeInNorm, {})
