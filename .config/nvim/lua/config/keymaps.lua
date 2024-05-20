@@ -83,18 +83,6 @@ map({ "n", "x" }, "<leader>y", '"+y', { desc = "Yank to system clipboard", silen
 map({ "n", "x" }, "<leader>p", '"+p', { desc = "Paste after from system clipboard", silent = true })
 map({ "n", "x" }, "<leader>P", '"+P', { desc = "Paste before from system clipboard", silent = true })
 
--- Go to the dashboard
-cmd("QuitToDashboard", function()
-  vim.cmd("Alpha")
-  vim.cmd("Neotree close")
-end, { desc = "Quit to the dashboard and close Neotree" })
-map("n", "<leader>qw", "<cmd>QuitToDashboard<CR>")
-
-cmd("Test", function()
-  local git_dir = vim.fn.finddir(".git", vim.fn.getcwd() .. ";")
-  print(git_dir ~= "")
-end, { desc = "Check if the pwd is a git repo" })
-
 -- Open the current working directory
 map({ "n" }, "<leader>o", "<cmd>!open $PWD<CR><CR>", { desc = "Open PWD in a file explorer" })
 
