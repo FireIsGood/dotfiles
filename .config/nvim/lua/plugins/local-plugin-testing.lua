@@ -3,10 +3,7 @@ return {
   {
     dir = "~/Documents/Programming/pond.nvim",
     config = function()
-      require("pond-nvim").setup({
-        name = "FireIsFisher",
-        customFish = { "Bass", "Jellyfish" },
-      })
+      require("pond-nvim").setup()
     end,
   },
   -- Real plugins
