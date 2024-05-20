@@ -19,7 +19,7 @@ opt.expandtab = true
 
 -- Show trailing whitespace but fancy
 opt.list = true
-vim.opt.listchars = {
+opt.listchars = {
   tab = "→ ",
   trail = "╳",
   nbsp = "⎵",
@@ -29,6 +29,6 @@ vim.opt.listchars = {
 opt.clipboard = ""
 
 -- Funny title
-vim.opt.title = true -- Use custom title
-vim.opt.titlelen = 0 -- No limit on length
-vim.opt.titlestring = "why am i in comic sans"
+opt.title = true -- Use custom title
+opt.titlelen = 0 -- No limit on length
+opt.titlestring = "why am i in comic sans"
