@@ -8,6 +8,6 @@ return {
     -- disable a keymap
     keys[#keys + 1] = { "K", false }
     -- add a keymap
-    keys[#keys + 1] = { "gh", vim.lsp.buf.hover, mode = "n" }
+    -- keys[#keys + 1] = { "gh", vim.lsp.buf.hover, mode = "n" }
   end,
 }
