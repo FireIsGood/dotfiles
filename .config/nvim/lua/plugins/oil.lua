@@ -9,6 +9,7 @@ return {
       ["g?"] = "actions.show_help",
       ["<CR>"] = "actions.select",
       ["<C-c>"] = "actions.close",
+      ["q"] = "actions.close",
       ["<C-l>"] = "actions.refresh",
       ["-"] = "actions.parent",
     },
