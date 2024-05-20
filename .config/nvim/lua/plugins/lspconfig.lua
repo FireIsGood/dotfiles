@@ -1,6 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
-  opts = { document_highlight = { enabed = false } },
+  ---@class PluginLspOpts
+  opts = { document_highlight = { enabled = false } },
   init = function()
     local keys = require("lazyvim.plugins.lsp.keymaps").get()
     -- change a keymap
