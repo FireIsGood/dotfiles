@@ -110,6 +110,9 @@ end, { desc = "Close current buffer" })
 -- Aerial
 map({ "n" }, "<leader>co", "<cmd>AerialToggle<CR>", { desc = "Open symbol outline" })
 
+-- CMP
+map({ "n" }, "<C-y>", require("cmp").mapping.complete, { desc = "Select completion" })
+
 -- Oil (file management via buffer) BUT IT'S BROKEN RIGHT NOW
 -- map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory", silent = true })
 
