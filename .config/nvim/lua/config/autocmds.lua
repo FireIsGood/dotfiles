@@ -26,6 +26,11 @@ for type, width in pairs(color_columns) do
   au({ "FileType", "BufEnter" }, {
     pattern = type,
     callback = function()
+      -- Do not mess with the Obsidian vault
+      local is_vault = string.find(vim.fn.expand("%:p"), "monolith", 0, true)
+      if is_vault then
+        return
+      end
       -- print("Color columns at: " .. width)
       vim.wo.colorcolumn = width
 
