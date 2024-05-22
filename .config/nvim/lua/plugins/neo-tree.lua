@@ -17,6 +17,7 @@ return {
         ["h"] = "close_node",
         ["H"] = "close_all_nodes",
         ["s"] = "toggle_hidden",
+        ["/"] = "noop",
       },
     },
     filesystem = {
