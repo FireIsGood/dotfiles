@@ -188,10 +188,10 @@ map({ "o", "x" }, "aq", function() vto.anyQuote("outer") end, { desc = "a quote"
 wk.register({ ["<leader>w"] = { name = "+workspaces/sessions" } })
 
 -- Workspaces
-map("n", "<leader>wl", "<cmd>WorkspacesList<CR>", { desc = "List workspaces" }) -- List workspaces (for debugging)
-map("n", "<leader>wo", "<cmd>Telescope workspaces<CR>", { desc = "Open workspace" }) -- Telescopes all workspaces (favorite!)
-map("n", "<leader>wa", ":WorkspacesAdd ", { desc = "Add workspace" }) -- Adds a workspace (type the name)
-map("n", "<leader>wr", ":WorkspacesRename ", { desc = "Rename workspace" }) -- Rename workspaces (for debugging)
+-- map("n", "<leader>wl", "<cmd>WorkspacesList<CR>", { desc = "List workspaces" }) -- List workspaces (for debugging)
+-- map("n", "<leader>wo", "<cmd>Telescope workspaces<CR>", { desc = "Open workspace" }) -- Telescopes all workspaces (favorite!)
+-- map("n", "<leader>wa", ":WorkspacesAdd ", { desc = "Add workspace" }) -- Adds a workspace (type the name)
+-- map("n", "<leader>wr", ":WorkspacesRename ", { desc = "Rename workspace" }) -- Rename workspaces (for debugging)
 
 -- Sessions
 map("n", "<leader>ws", "<cmd>SessionsSave<CR>", { desc = "Save session" }) -- Start saving a session of the current folder
