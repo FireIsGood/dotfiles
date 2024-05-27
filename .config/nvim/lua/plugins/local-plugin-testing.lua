@@ -20,7 +20,8 @@ return {
     config = true,
   },
   {
-    dir = "~/Documents/Programming/worker.nvim",
+    -- dir = "~/Documents/Programming/spaceman.nvim",
+    "FireIsGood/spaceman.nvim",
     opts = {
       workspaces = {
         { "Nvim-Data", "~/.local/share/nvim" },
@@ -28,8 +29,8 @@ return {
         { "Dotfiles", "~/dotfiles" },
       },
       directories = {
-        "~/Documents/Programming",
-        -- "~/Desktop/Somewhere",
+        "~/Documents/Programming", -- My actual folders
+        -- "~/Desktop/Somewhere", -- Showcase folders
       },
       use_default_keymaps = true,
       rename_function = function(name)
