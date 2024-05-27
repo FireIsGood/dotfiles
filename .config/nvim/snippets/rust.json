@@ -1,1 +1,1 @@
-{"plnv":{"body":"println!(\"{}\", ${1:var});","prefix":"plnv"},"fmt":{"prefix":"fmt","body":"format!(\"\");"},"plnvd":{"body":"println!(\"{:?}\", ${1:var});","prefix":"plnvd"}}
+{"fmt":{"prefix":"fmt","body":"format!(\"\");"},"prlnv + plnv":{"body":"println!(\"{}\", ${1:var});","prefix":["prlnv","plnv"]},"prlnvd":{"prefix":"prlnvd","body":"println!(\"{:?}\", ${1:var});"}}
