@@ -8,6 +8,11 @@ return {
         config = "~/code/typos-lsp/crates/typos-lsp/tests/typos.toml",
         init_options = { diagnosticSeverity = "information" },
       },
+      taplo = {
+        keys = {
+          { "K", false },
+        },
+      },
     },
   },
   init = function()
