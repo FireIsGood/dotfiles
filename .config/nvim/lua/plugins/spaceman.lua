@@ -1,7 +1,7 @@
 return {
   {
-    -- dir = "~/Documents/Programming/spaceman.nvim",
-    "FireIsGood/spaceman.nvim",
+    dir = "~/Documents/Programming/spaceman.nvim",
+    -- "FireIsGood/spaceman.nvim",
     opts = {
       workspaces = {
         { "nvim-data", "~/.local/share/nvim" },
@@ -22,17 +22,6 @@ return {
       telescope_opts = {
         scroll_strategy = "limit",
       },
-      hooks = {
-        before_move = { "noh", "SessionsStop", "silent %bdelete!" },
-        after_move = { "SessionsLoad" },
-      },
-    },
-  },
-  {
-    "natecraddock/sessions.nvim",
-    opts = {
-      session_filepath = vim.fn.stdpath("data") .. "/sessions", -- Saved at ~/.local/share/nvim/sessions/
-      absolute = true,
     },
   },
 }
