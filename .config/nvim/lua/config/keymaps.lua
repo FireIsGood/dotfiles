@@ -186,6 +186,4 @@ map({ "o", "x" }, "aq", function() vto.anyQuote("outer") end, { desc = "a quote"
 --[[ Workspaces and Sessions ]]
 --
 wk.register({ ["<leader>w"] = { name = "+workspaces/sessions" } })
-
--- Sessions
-map("n", "<leader>ws", "<cmd>SessionsSave<CR>", { desc = "Save session" }) -- Start saving a session of the current folder
+-- I'm using the spaceman.nvim (my plugin) defaults
