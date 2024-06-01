@@ -44,14 +44,23 @@ for type, width in pairs(color_columns) do
   })
 end
 
--- Automatically enter terminal insert mode
--- au("WinEnter", {
---   pattern = "*",
---   callback = function()
---     local is_term = vim.api.nvim_buf_get_name(0):match("^term") ~= nil
---     if is_term then
---       print("AUTO: insert mode")
---       vim.cmd("star") -- Enter insert mode
---     end
---   end,
--- })
+-- Set up terminal buffers
+vim.api.nvim_create_autocmd({ "TermOpen" }, {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+    vim.cmd("startinsert")
+  end,
+})
+-- Automatically enter insert mode in terminals
+vim.api.nvim_create_autocmd({ "WinEnter" }, {
+  pattern = "*",
+  callback = function()
+    local is_term = vim.api.nvim_buf_get_name(0):sub(1, 4) == "term"
+    if not is_term then
+      return
+    end
+    vim.cmd("startinsert")
+  end,
+})
