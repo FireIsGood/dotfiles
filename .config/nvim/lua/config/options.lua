@@ -25,6 +25,9 @@ opt.listchars = {
   nbsp = "⎵",
 }
 
+-- Wrap lines better
+opt.linebreak = true
+
 -- Use a register for the clipboard
 opt.clipboard = ""
 
