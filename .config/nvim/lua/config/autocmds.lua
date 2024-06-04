@@ -44,6 +44,20 @@ for type, width in pairs(color_columns) do
   })
 end
 
+local ft_remap = {
+  ["hbs"] = "html",
+}
+
+for base, remap in pairs(ft_remap) do
+  au({ "BufNewFile", "BufRead" }, {
+    pattern = "*." .. base,
+    callback = function()
+      -- vim.bo.filetype = remap
+      vim.cmd("set ft=" .. remap)
+    end,
+  })
+end
+
 -- Set up terminal buffers
 vim.api.nvim_create_autocmd({ "TermOpen" }, {
   pattern = "*",
