@@ -22,6 +22,9 @@ return {
       telescope_opts = {
         scroll_strategy = "limit",
       },
+      hooks = {
+        before_move = "Neotree close",
+      },
     },
   },
 }
