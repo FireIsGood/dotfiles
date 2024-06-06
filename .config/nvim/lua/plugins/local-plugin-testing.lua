@@ -19,4 +19,8 @@ return {
     lazy = false,
     config = true,
   },
+  {
+    dir = "~/Documents/Programming/medium-wrap.nvim",
+    opts = { alignment = "center" },
+  },
 }
