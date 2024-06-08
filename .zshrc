@@ -3,7 +3,8 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 [ -f "/home/fireisgood/.ghcup/env" ] && source "/home/fireisgood/.ghcup/env" # ghcup-env
 
 # Init starship
-source <(/usr/local/bin/starship init zsh --print-full-init)
+# source <(/usr/local/bin/starship init zsh --print-full-init)
+eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/zen.yml)"
 
 #
 # --- PACKAGE MANAGER ---
