@@ -13,6 +13,7 @@ return {
           { "K", false },
         },
       },
+      biome = {},
     },
   },
   init = function()
@@ -23,5 +24,6 @@ return {
     keys[#keys + 1] = { "K", false }
     -- add a keymap
     -- keys[#keys + 1] = { "gh", vim.lsp.buf.hover, mode = "n" }
+    -- require("lspconfig").biome.setup({})
   end,
 }
