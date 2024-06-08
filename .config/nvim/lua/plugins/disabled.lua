@@ -6,6 +6,7 @@ return {
   { "folke/flash.nvim", enabled = false },
 
   -- Disable various mini plugins
+  { "echasnovski/mini.ai", enabled = false },
   { "echasnovski/mini.indentscope", enabled = false },
   { "echasnovski/mini.comment", enabled = false },
 }
