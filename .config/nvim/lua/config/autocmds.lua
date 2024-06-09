@@ -46,6 +46,7 @@ end
 
 local ft_remap = {
   ["hbs"] = "html",
+  ["mdx"] = "markdown",
 }
 
 for base, remap in pairs(ft_remap) do
