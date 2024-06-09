@@ -9,4 +9,5 @@ return {
   { "echasnovski/mini.ai", enabled = false },
   { "echasnovski/mini.indentscope", enabled = false },
   { "echasnovski/mini.comment", enabled = false },
+  { "lukas-reineke/headlines.nvim", enabled = false },
 }
