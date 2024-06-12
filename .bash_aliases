@@ -99,6 +99,9 @@ alias pn='pnpm'
 # Bacon
 alias ba='bacon' # Short
 
+# Just
+alias j='just'
+
 # YT-DLP
 alias yt='yt-dlp --embed-metadata'
 alias yta='yt-dlp --extract-audio --format ba/b --sponsorblock-remove all'
