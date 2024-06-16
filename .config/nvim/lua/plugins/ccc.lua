@@ -9,6 +9,7 @@ return {
         lsp = true,
         filetypes = {
           "css",
+          "scss",
           "astro",
           "svelte",
         },
