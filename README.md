@@ -37,7 +37,7 @@ Otherwise, install them with your favorite package manager.
 Clone the repository into a local folder in $HOME:
 
 ```bash
-git clone git@github.com:FireIsGood/dotfiles.git ~/dotfiles
+git clone https://github.com/FireIsGood/dotfiles.git ~/dotfiles
 ```
 
 Run `stow` to add symlinks:
