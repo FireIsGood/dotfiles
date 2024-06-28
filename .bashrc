@@ -11,10 +11,6 @@ fi
 export PATH
 unset rc
 
-# Starship (funny symbol if in NIX)
-if [[ -z "$IN_NIX_SHELL" ]]; then
-	export NIX_FUNNY_ICON="❇"
-fi
 
 source <(/usr/local/bin/starship init bash --print-full-init)
 
