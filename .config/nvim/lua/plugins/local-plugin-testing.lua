@@ -1,3 +1,7 @@
+-- Don't actually do this!
+if true then
+  return {}
+end
 return {
   -- Meme plugins
   {
