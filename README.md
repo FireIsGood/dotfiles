@@ -11,7 +11,8 @@ The files that you're probably interested are:
 - [Starship prompt](/.config/starship.toml)  
   ![starship prompt](/stow/starship_prompt.png)
 
-![](/stow/starship_prompt.png)
+- [Oh My Posh prompt](/.config/oh-my-posh/zen.toml)  
+  ![Oh My Posh prompt](/stow/oh-my-posh_prompt.png)
 
 ## What are "dotfiles?"
 
