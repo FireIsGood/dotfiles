@@ -1,7 +1,7 @@
 return {
   {
-    dir = "~/Documents/Programming/spaceman.nvim",
-    -- "FireIsGood/spaceman.nvim",
+    -- dir = "~/Documents/Programming/spaceman.nvim",
+    "FireIsGood/spaceman.nvim",
     opts = {
       workspaces = {
         { "nvim-data", "~/.local/share/nvim" },
