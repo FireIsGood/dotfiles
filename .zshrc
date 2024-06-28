@@ -2,9 +2,12 @@
 [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" # brew
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
-# Init starship
-# source <(/usr/local/bin/starship init zsh --print-full-init)
-eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/zen.yml)"
+# Message to send after loading
+PROMPTMESSAGE=""
+
+# Init prompt
+# command -v starship &> /dev/null && source <(starship init zsh --print-full-init) || PROMPTMESSAGE+='Starship is not installed!\n'
+command -v oh-my-posh &> /dev/null && eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/zen.yml)" || PROMPTMESSAGE+='Oh My Posh is not installed!\n'
 
 #
 # --- PACKAGE MANAGER ---
@@ -85,3 +88,5 @@ if [[ "$TERM_PROGRAM" == "vscode" ]] || [[ -n "$NVIM" ]]; then
 else
   clear && fakeneofetch
 fi
+
+echo -en "\e[31m$PROMPTMESSAGE\e[0m"

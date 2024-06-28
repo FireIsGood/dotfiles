@@ -15,7 +15,12 @@ unset rc
 [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" # brew
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"                                                 # ghcup-env
 
-source <(/usr/local/bin/starship init bash --print-full-init)
+# Message to send after loading
+PROMPTMESSAGE=""
+
+# Init prompt
+# command -v starship &>/dev/null && source <(starship init bash --print-full-init) || PROMPTMESSAGE+='Starship is not installed!\n'
+command -v oh-my-posh &>/dev/null && eval "$(oh-my-posh init bash --config $HOME/.config/oh-my-posh/zen.yml)" || PROMPTMESSAGE+='Oh My Posh is not installed!\n'
 
 #
 # --- PACKAGE MANAGER ---
@@ -59,3 +64,5 @@ HISTCONTROL=ignorespace
 # Shell integrations
 eval "$(fzf --bash)"
 eval "$(zoxide init --cmd cd bash)"
+
+echo -en "\e[31m$PROMPTMESSAGE\e[0m"
