@@ -1,5 +1,5 @@
 # PATH related
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" # brew
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
 # Init starship
