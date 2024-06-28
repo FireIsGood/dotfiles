@@ -189,6 +189,3 @@ PROMPT_DIRTRIM=3
 # Add stuff to the PATH
 # export PATH=$PATH:/home/fireisgood/.cargo/bin
 export PATH=/home/fireisgood/.nimble/bin:$PATH
-
-# Enable TheFuck (use "fuck" to fix previous command)
-eval "$(thefuck --alias)"
