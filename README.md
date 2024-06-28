@@ -1,7 +1,6 @@
 # FireIsGood's Dotfiles
 
-A mirror of my dotfiles, used through
-[GNU Stow](https://www.gnu.org/software/stow/).
+A mirror of my dotfiles, used through [GNU Stow](https://www.gnu.org/software/stow/).
 
 ## Configurations of interest
 
@@ -22,8 +21,8 @@ Some bullet points from pseudometa's [.config repository](https://github.com/chr
 
 ## Requirements
 
-Ensure you have Git and Stow installed on your system. You can use the following
-commands to check if they are installed:
+Ensure you have Git and Stow installed on your system. You can use the following commands to check if they are
+installed:
 
 ```bash
 git -v
