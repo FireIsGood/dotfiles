@@ -8,7 +8,8 @@ The files that you're probably interested are:
 
 - [Neovim config](/.config/nvim/)
 - [bash aliases](.bash_aliases)
-- [Starship prompt](/.config/starship.toml)
+- [Starship prompt](/.config/starship.toml)  
+  ![starship prompt](/stow/starship_prompt.png)
 
 ![](/stow/starship_prompt.png)
 
