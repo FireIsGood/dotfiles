@@ -56,7 +56,7 @@ map({ "n", "x" }, "<C-d>", "<C-d>zz", { desc = "Down half page", noremap = true 
 map({ "n", "x" }, "<C-u>", "<C-u>zz", { desc = "Up half page", noremap = true })
 
 -- Replace the join command
-map("n", "M", "J", { desc = "Merge" })
+map({ "n", "x" }, "M", "J", { desc = "Merge" })
 
 -- Funny esc meme
 local EscapeInNorm = function()
