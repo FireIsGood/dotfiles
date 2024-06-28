@@ -53,9 +53,11 @@ Clone the repository into a local folder in $HOME:
 git clone https://github.com/FireIsGood/dotfiles.git ~/dotfiles
 ```
 
-Run `stow` to add symlinks:
+Run `stow` in the new folder to add symlinks:
 
 ```bash
 cd ~/dotfiles
 stow .
 ```
+
+If you encounter any file conflicts, you must delete either the conflicting file or delete the new dotfiles folder file
