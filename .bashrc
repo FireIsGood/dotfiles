@@ -11,6 +11,9 @@ fi
 export PATH
 unset rc
 
+# PATH related
+[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" # brew
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"                                                 # ghcup-env
 
 source <(/usr/local/bin/starship init bash --print-full-init)
 
