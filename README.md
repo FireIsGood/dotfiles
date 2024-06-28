@@ -33,6 +33,18 @@ stow -V
 
 Otherwise, install them with your favorite package manager.
 
+You will also need either [Starship](https://starship.rs) or [Oh My Posh](https://ohmyposh.dev) depending on the current
+prompt used.
+
+You can check if they are installed with the corresponding commands:
+
+```bash
+oh-my-posh --version
+starship -V
+```
+
+If they are not installed, you will get an error message about the corresponding prompt.
+
 ## Installation
 
 Clone the repository into a local folder in $HOME:
