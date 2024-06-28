@@ -180,12 +180,6 @@ export MANPAGER='nvim +Man!'
 # Just use pwd if you want to know it!
 PROMPT_DIRTRIM=3
 
-# Ignore case when autocompleting
-# bind -s 'set completion-ignore-case on'
-
-# Turn off ctrl+r for vscode moments
-# bind -r "\C-r"
-
 # Add stuff to the PATH
 # export PATH=$PATH:/home/fireisgood/.cargo/bin
 export PATH=/home/fireisgood/.nimble/bin:$PATH
