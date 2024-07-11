@@ -1,8 +1,9 @@
 [user]
 name = FireIsGood
 email = fireisadequate@gmail.com
-signingkey = 0ACFEAD4981C92DF
+signingkey = 0ACFEAD4981C92DF # My GPG key (delete or replace)
 
+# Changes all git requests to use an SSH key (delete if you don't have one)
 [url "git@github.com:"]
 insteadOf = "https://github.com/"
 

@@ -60,4 +60,12 @@ cd ~/dotfiles
 stow .
 ```
 
-If you encounter any file conflicts, you must delete either the conflicting file or delete the new dotfiles folder file
+If you encounter any file conflicts, you must delete either the conflicting file or delete the new dotfiles folder file.
+
+## Additional Notes
+
+The `.gitconfig` file includes two settings which will require all connections to be SSH and attempt to sign with my
+personal GPG key. If you do not have an SSH key set up with Git, remove the indicated line. If you have a GPG signing
+key, follow the steps on the [GitHub
+Docs](https://docs.github.com/en/authentication/managing-commit-signature-verification/checking-for-existing-gpg-keys)
+on how to add your own key under the `signingkey` field.
