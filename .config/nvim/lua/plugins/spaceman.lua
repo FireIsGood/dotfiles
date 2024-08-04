@@ -4,6 +4,7 @@ return {
     "FireIsGood/spaceman.nvim",
     opts = {
       workspaces = {
+        "~",
         { "nvim-data", "~/.local/share/nvim" },
         { "config", "~/dotfiles/.config/nvim" },
         "~/dotfiles",
