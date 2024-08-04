@@ -128,7 +128,7 @@ map("i", "<C-_>", require("Comment.api").toggle.linewise.current, { desc = "Togg
 map("n", "gh", vim.lsp.buf.hover, { desc = "Hover" })
 
 -- Devdocs
-wk.register({ ["<leader>d"] = { name = "+DevDocs" } })
+wk.add({ "<leader>d", group = "+DevDocs" })
 map("n", "<leader>dd", "<cmd>DevdocsOpenCurrentFloat<CR>", { desc = "Open DevDocs search (current language)" })
 map("n", "<leader>ds", "<cmd>DevdocsOpenFloat<CR>", { desc = "Open DevDocs search (all languages)" })
 map("n", "<leader>du", "<cmd>DevdocsUpdate<CR>", { desc = "Update DevDocs" })
@@ -140,7 +140,7 @@ map("n", "<leader>t", "<cmd>Telescope commands<CR>", { desc = "Open easy command
 map({ "n" }, "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Preview this hunk" })
 
 -- Harpoon (commands set in plugin file)
-wk.register({ ["<leader>h"] = { name = "+Harpoon" } })
+wk.add({ "<leader>h", group = "+Harpoon" })
 map("n", "<leader>hh", "<cmd>HarpoonMenu<CR>", { desc = "Open the Harpoon menu" })
 map("n", "<leader>ha", "<cmd>HarpoonAddFile<CR>", { desc = "Add the current file to Harpoon" })
 map("n", "<M-j>", "<cmd>HarpoonBuffer 1<CR>", { desc = "Go to buffer 1" })
@@ -149,7 +149,7 @@ map("n", "<M-l>", "<cmd>HarpoonBuffer 3<CR>", { desc = "Go to buffer 3" })
 map("n", "<M-;>", "<cmd>HarpoonBuffer 4<CR>", { desc = "Go to buffer 4" })
 
 -- Scissors
-wk.register({ ["<leader>i"] = { name = "+Snippets" } })
+wk.add({ "<leader>i", group = "+Snippets" })
 map("n", "<leader>ie", require("scissors").editSnippet, { desc = "Edit snippets" })
 map({ "n", "x" }, "<leader>ia", require("scissors").addNewSnippet, { desc = "Add a snippet" })
 
@@ -185,5 +185,5 @@ map({ "o", "x" }, "aq", function() vto.anyQuote("outer") end, { desc = "a quote"
 --
 --[[ Workspaces and Sessions ]]
 --
-wk.register({ ["<leader>w"] = { name = "+workspaces/sessions" } })
+wk.add({ "<leader>w", group = "+workspaces/sessions" })
 -- I'm using the spaceman.nvim (my plugin) defaults
