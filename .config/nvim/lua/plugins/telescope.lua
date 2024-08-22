@@ -1,5 +1,3 @@
-local Util = require("lazyvim.util")
-
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
@@ -18,7 +16,6 @@ return {
     { "<leader>fr", false },
     { "<leader>fR", false },
     { "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
-    { "<leader>fO", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
   },
   init = function()
     require("telescope").load_extension("git_file_history")
