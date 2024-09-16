@@ -9,8 +9,8 @@ return {
         { "config", "~/dotfiles/.config/nvim" },
         "~/dotfiles",
         "~/Desktop",
-        "/media/fireisgood/Users/FireIsGood/Desktop/College/Y2T3/CS 374",
-        "/media/fireisgood/Users/FireIsGood/Desktop/College/Y2T3/CS 290",
+        "~/Documents/College/Y2T3/CS 374",
+        "~/Documents/College/Y2T3/CS 290",
         "/home/fireisgood/Documents/obsidian-monolith",
       },
       directories = {
