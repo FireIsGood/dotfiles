@@ -11,6 +11,7 @@ return {
         "~/Desktop",
         "~/Documents/College/Y2T3/CS 374",
         "~/Documents/College/Y2T3/CS 290",
+        "~/Documents/College/Y3T1/CS 450",
         "/home/fireisgood/Documents/obsidian-monolith",
       },
       directories = {
