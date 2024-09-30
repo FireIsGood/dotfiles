@@ -84,7 +84,7 @@ map({ "n", "x" }, "<leader>p", '"+p', { desc = "Paste after from system clipboar
 map({ "n", "x" }, "<leader>P", '"+P', { desc = "Paste before from system clipboard", silent = true })
 
 -- Open the current working directory
-map({ "n" }, "<leader>o", "<cmd>silent !open $PWD<CR>", { desc = "Open PWD in a file explorer" })
+map({ "n" }, "<leader>o", "<cmd>silent !xdg-open $PWD<CR>", { desc = "Open PWD in a file explorer" })
 
 local vim_save = function()
   vim.cmd("wa")
