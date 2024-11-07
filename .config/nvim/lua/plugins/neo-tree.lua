@@ -1,4 +1,3 @@
-local Util = require("lazyvim.util")
 return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
