@@ -1,1 +1,1 @@
-{"#header_guard":{"prefix":"#header_guard","body":["#ifndef ${1:HEADER_H}","#define $1","","#endif \/\/ $1"]}}
+{"fori":{"prefix":"fori","body":["for (int i = ${1:0}; i < ${2:3}; i++) {","  $0","}"]},"#header_guard":{"body":["#ifndef ${1:HEADER_H}","#define $1","","#endif \/\/ $1"],"prefix":"#header_guard"}}
