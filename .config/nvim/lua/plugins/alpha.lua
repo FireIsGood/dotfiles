@@ -1,72 +1,101 @@
+--- @param len number
+local function pad(len)
+  return { type = "padding", val = len }
+end
+
+--- @param text string
+local function comment(text)
+  return {
+    type = "text",
+    val = text,
+    opts = {
+      hl = "SpecialComment",
+      shrink_margin = false,
+      position = "center",
+    },
+  }
+end
+
+--- @param values table
+local function button_list(values)
+  local list = {
+    type = "group",
+    val = values,
+    opts = { hl = "AlphaButtons" },
+  }
+  for _, b in ipairs(list.val) do
+    b.opts.hl = "AlphaButtons"
+    b.opts.hl_shortcut = "AlphaShortcut"
+  end
+  return list
+end
+
 return {
   "goolord/alpha-nvim",
   event = "VimEnter",
-  enabled = true,
   init = false,
-  opts = function()
+  config = function()
+    local button = require("alpha.themes.dashboard").button
+
     -- Random logo stuff
     math.randomseed(os.time())
     local logo_list = require("meme.logos")
     local random_index = math.random(#logo_list)
-    local logo = logo_list[random_index]
+    local logo = vim.split(logo_list[random_index], "\n")
 
-    -- Actual dashboard stuff lol
-    local dashboard = require("alpha.themes.dashboard")
-
-    dashboard.section.header.val = vim.split(logo, "\n")
-    -- stylua: ignore
-    dashboard.section.buttons.val = {
-      dashboard.button("w", "󱎃 " .. " Telescope workspaces",   "<cmd> Spaceman <cr>"),
-      -- dashboard.button("f", " " .. " Find file",              "<cmd> Telescope find_files <cr>"),
-      -- dashboard.button("n", " " .. " New file",               "<cmd> ene <BAR> startinsert <cr>"),
-      -- dashboard.button("r", " " .. " Recent files",           "<cmd> Telescope oldfiles <cr>"),
-      -- dashboard.button("g", " " .. " Find text",              "<cmd> Telescope live_grep <cr>"),
-      -- dashboard.button("c", " " .. " Config",                 "<cmd> lua require('lazyvim.util').telescope.config_files()() <cr>"),
-      -- dashboard.button("s", " " .. " Restore Session",        [[<cmd> lua require("persistence").load() <cr>]]),
-      -- dashboard.button("x", " " .. " Lazy Extras",            "<cmd> LazyExtras <cr>"),
-      dashboard.button("l", "󰒲 " .. " Lazy",                   "<cmd> Lazy <cr>"),
-      dashboard.button("q", " " .. " Quit",                   "<cmd> qa <cr>"),
+    local header = {
+      type = "text",
+      val = logo,
+      opts = { position = "center", hl = "AlphaHeader" },
     }
-    for _, button in ipairs(dashboard.section.buttons.val) do
-      button.opts.hl = "AlphaButtons"
-      button.opts.hl_shortcut = "AlphaShortcut"
-    end
-    dashboard.section.header.opts.hl = "AlphaHeader"
-    dashboard.section.buttons.opts.hl = "AlphaButtons"
-    dashboard.section.footer.opts.hl = "AlphaFooter"
-    dashboard.opts.layout[1].val = 8
-    return dashboard
-  end,
-  config = function(_, dashboard)
-    -- close Lazy and re-open when the dashboard is ready
-    if vim.o.filetype == "lazy" then
-      vim.cmd.close()
-      vim.api.nvim_create_autocmd("User", {
-        once = true,
-        pattern = "AlphaReady",
-        callback = function()
-          require("lazy").show()
-        end,
-      })
+
+    local all_workspaces = require("spaceman.workspace").get_workspaces()
+    local workspace_list = {}
+
+    for i, w in ipairs(all_workspaces) do
+      if #workspace_list == 10 then
+        break
+      end
+
+      local shortcut = tostring(math.fmod(i, 10)) -- wrap to 0
+      local workspace_button = button(shortcut, "  " .. w.name)
+      local _workspace = function()
+        require("spaceman").api_open_workspace(w.path)
+      end
+      workspace_button.on_press = _workspace
+      workspace_button.opts.keymap = { "n", shortcut, _workspace, { noremap = true, silent = true, nowait = true } }
+
+      workspace_list[i] = workspace_button
     end
 
-    require("alpha").setup(dashboard.opts)
+    local workspaces = button_list(workspace_list)
 
-    vim.api.nvim_create_autocmd("User", {
-      once = true,
-      pattern = "LazyVimStarted",
-      callback = function()
-        local stats = require("lazy").stats()
-        local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-        dashboard.section.footer.val = "⚡ Neovim loaded "
-          .. stats.loaded
-          .. "/"
-          .. stats.count
-          .. " plugins in "
-          .. ms
-          .. "ms"
-        pcall(vim.cmd.AlphaRedraw)
-      end,
+    local buttons = button_list({
+        -- stylua: ignore start
+        button("w", "󱎃  Telescope workspaces",   "<cmd>Spaceman<cr>"),
+        button("q", "  Quit",                   "<cmd>qa<cr>"),
+      -- stylua: ignore end
     })
+
+    require("alpha").setup({
+      layout = {
+        pad(4),
+        header,
+        pad(2),
+        comment("Quick Actions"),
+        pad(1),
+        buttons,
+        pad(2),
+        comment("Workspaces"),
+        pad(1),
+        workspaces,
+      },
+      opts = {
+        margin = 5,
+      },
+    })
+
+    -- Fix scrolloff (set to top pad size)
+    vim.opt_local.scrolloff = 4
   end,
 }
