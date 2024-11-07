@@ -134,7 +134,7 @@ alias v="nvim"
 alias ta="tmux attach"
 
 # fd find
-alias fd="fdfind"
+# alias fd="fdfind"
 
 #* Fun *#
 
