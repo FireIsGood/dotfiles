@@ -16,6 +16,46 @@ local function comment(text)
   }
 end
 
+--- @param sc string
+--- @param txt string
+--- @param keybind string|function? optional
+--- @param keybind_opts table? optional
+local function button(sc, txt, keybind, keybind_opts)
+  local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")
+
+  local opts = {
+    position = "center",
+    shortcut = sc .. " ",
+    cursor = 3,
+    width = 50,
+    align_shortcut = "right",
+    hl = "AlphaButtons",
+    hl_shortcut = { { "AlphaShortcut", 0, 1 } },
+  }
+  if keybind then
+    keybind_opts = keybind_opts or { noremap = true, silent = true, nowait = true }
+    opts.keymap = { "n", sc_, keybind, keybind_opts }
+  end
+
+  -- Allow using a string or function for the keymap on_press
+  local on_press
+  if type(keybind == "string") then
+    on_press = function()
+      local key = vim.api.nvim_replace_termcodes(keybind .. "<Ignore>", true, false, true)
+      vim.api.nvim_feedkeys(key, "t", false)
+    end
+  else
+    on_press = keybind
+  end
+
+  return {
+    type = "button",
+    val = txt,
+    on_press = on_press,
+    opts = opts,
+  }
+end
+
 --- @param values table
 local function button_list(values)
   local list = {
@@ -23,10 +63,6 @@ local function button_list(values)
     val = values,
     opts = { hl = "AlphaButtons" },
   }
-  for _, b in ipairs(list.val) do
-    b.opts.hl = "AlphaButtons"
-    b.opts.hl_shortcut = "AlphaShortcut"
-  end
   return list
 end
 
@@ -35,8 +71,6 @@ return {
   event = "VimEnter",
   init = false,
   config = function()
-    local button = require("alpha.themes.dashboard").button
-
     -- Random logo stuff
     math.randomseed(os.time())
     local logo_list = require("meme.logos")
@@ -58,12 +92,9 @@ return {
       end
 
       local shortcut = tostring(math.fmod(i, 10)) -- wrap to 0
-      local workspace_button = button(shortcut, "  " .. w.name)
-      local _workspace = function()
+      local workspace_button = button(shortcut, "  " .. w.name, function()
         require("spaceman").api_open_workspace(w.path)
-      end
-      workspace_button.on_press = _workspace
-      workspace_button.opts.keymap = { "n", shortcut, _workspace, { noremap = true, silent = true, nowait = true } }
+      end)
 
       workspace_list[i] = workspace_button
     end
