@@ -67,8 +67,8 @@ map("n", "<esc>", EscapeInNorm, {})
 map("n", "<C-c>", EscapeInNorm, {})
 
 -- Remove annoying highlights on exiting insert mode
-map("i", "<esc>", "<cmd>noh<CR><esc>", { desc = "Escape and clear hlsearch" })
-map("i", "<C-c>", "<cmd>noh<CR><C-c>", { desc = "Escape and clear hlsearch" })
+map("i", "<esc>", EscapeInNorm, { desc = "Escape and clear hlsearch" })
+map("i", "<C-c>", EscapeInNorm, { desc = "Escape and clear hlsearch" })
 
 -- More powerful J and K (use 6j/6k)
 -- Via Pseudometa (https://nanotipsforvim.prose.sh/motion-setup--hjkl-as-amplified-hjkl)
