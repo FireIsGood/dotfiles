@@ -94,6 +94,12 @@ cmd("W", vim_save, { desc = "Save all (shortcut)" })
 cmd("Wa", vim_save, { desc = "Save all (shortcut)" })
 cmd("WA", vim_save, { desc = "Save all (shortcut)" })
 
+-- CD to currently open file
+cmd("Here", function()
+  vim.cmd(":cd %:p:h")
+  vim.cmd(":echo 'PWD is now in \"" .. vim.fn.expand("%:p:h") .. "\"'")
+end, { desc = "CD to current file" })
+
 --[[ Buffers ]]
 
 -- Moving
