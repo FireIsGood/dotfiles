@@ -182,13 +182,9 @@ local function telescope_relative()
   local is_git_repo = vim.fn.finddir(".git", vim.fn.getcwd() .. ";") ~= ""
 
   if is_git_repo then
-    -- Git repo
     require("telescope.builtin").git_files()
-    -- print("GIT GAMING")
   else
-    -- Not a git repo
     require("telescope.builtin").find_files()
-    -- print("GIT GOOD")
   end
 end
 map("n", "<leader><space>", telescope_relative, { desc = "Find in current directory" })
