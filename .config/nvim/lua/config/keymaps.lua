@@ -126,7 +126,7 @@ map("n", "<leader>>", "<cmd>BufferLineMoveNext<CR>", { desc = "Move buffer right
 
 -- Closing
 map("n", "<leader>bd", function()
-  MiniBufremove.delete()
+  require("mini.bufremove").delete()
 end, { desc = "Close current buffer" })
 
 --[[ Plugins ]]
