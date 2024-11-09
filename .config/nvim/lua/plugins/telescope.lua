@@ -15,7 +15,8 @@ return {
   keys = {
     { "<leader>fr", false },
     { "<leader>fR", false },
-    { "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
+    { "<leader>ff", false },
+    { "<leader>f/", false },
   },
   init = function()
     require("telescope").load_extension("git_file_history")

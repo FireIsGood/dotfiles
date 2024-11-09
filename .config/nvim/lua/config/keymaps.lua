@@ -178,8 +178,9 @@ map("n", "<leader>ie", require("scissors").editSnippet, { desc = "Edit snippets"
 map({ "n", "x" }, "<leader>ia", require("scissors").addNewSnippet, { desc = "Add a snippet" })
 
 -- Telescope (fuzzy finder)
-local function telescope_relative()
-  local is_git_repo = vim.fn.finddir(".git", vim.fn.getcwd() .. ";") ~= ""
+local function telescope_git_fallback()
+  vim.fn.system("git rev-parse --is-inside-work-tree")
+  local is_git_repo = vim.v.shell_error == 0
 
   if is_git_repo then
     require("telescope.builtin").git_files()
@@ -187,7 +188,25 @@ local function telescope_relative()
     require("telescope.builtin").find_files()
   end
 end
-map("n", "<leader><space>", telescope_relative, { desc = "Find in current directory" })
+local function telescope_files()
+  require("telescope.builtin").find_files({ cwd = vim.uv.cwd() })
+end
+local function telescope_oldfiles()
+  require("telescope.builtin").oldfiles({ cwd = vim.uv.cwd() })
+end
+local function telescope_live_grep()
+  vim.fn.system("git rev-parse --is-inside-work-tree")
+  local is_git_repo = vim.v.shell_error == 0
+  local git_root = vim.fn.fnamemodify(vim.fn.finddir(".git", ".;"), ":h")
+
+  require("telescope.builtin").live_grep({
+    cwd = is_git_repo and git_root or vim.uv.cwd(),
+  })
+end
+map("n", "<leader><space>", telescope_git_fallback, { desc = "Find files (git/fallback, cwd)" })
+map("n", "<leader>ff", telescope_files, { desc = "Find files (cwd)" })
+map("n", "<leader>fo", telescope_oldfiles, { desc = "Find files (cwd)" })
+map("n", "<leader>f/", telescope_live_grep, { desc = "Live grep (cwd)" })
 map("n", "<leader>,", require("telescope.builtin").buffers, { desc = "Find buffers" })
 
 -- Undo tree
