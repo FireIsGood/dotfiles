@@ -97,7 +97,7 @@ cmd("WA", vim_save, { desc = "Save all (shortcut)" })
 -- CD to currently open file
 cmd("Here", function()
   vim.cmd(":cd %:p:h")
-  vim.cmd(":echo 'PWD is now in \"" .. vim.fn.expand("%:p:h") .. "\"'")
+  print('PWD is now in "' .. vim.fn.expand("%:p:h") .. '"')
 end, { desc = "CD to current file" })
 
 -- diagnostic
