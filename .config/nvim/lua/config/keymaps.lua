@@ -100,6 +100,24 @@ cmd("Here", function()
   vim.cmd(":echo 'PWD is now in \"" .. vim.fn.expand("%:p:h") .. "\"'")
 end, { desc = "CD to current file" })
 
+-- diagnostic
+---@param next "f"|"b"
+---@param severity "ERROR"|"WARN"?
+local diagnostic_goto = function(next, severity)
+  local go = (next == "f") and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+  local severity_index = severity and vim.diagnostic.severity[severity] or nil
+  return function()
+    go({ severity = severity_index })
+  end
+end
+map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+map("n", "]d", diagnostic_goto("f"), { desc = "Next Diagnostic" })
+map("n", "[d", diagnostic_goto("b"), { desc = "Prev Diagnostic" })
+map("n", "]e", diagnostic_goto("f", "ERROR"), { desc = "Next Error" })
+map("n", "[e", diagnostic_goto("b", "ERROR"), { desc = "Prev Error" })
+map("n", "]w", diagnostic_goto("f", "WARN"), { desc = "Next Warning" })
+map("n", "[w", diagnostic_goto("b", "WARN"), { desc = "Prev Warning" })
+
 --[[ Buffers ]]
 
 -- Moving
