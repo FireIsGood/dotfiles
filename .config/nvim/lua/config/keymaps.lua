@@ -1,8 +1,6 @@
 --          --
 -- KEYBINDS --
 --          --
-local Util = require("lazyvim.util")
-
 local map = vim.keymap.set
 local wk = require("which-key")
 local cmd = vim.api.nvim_create_user_command
@@ -13,12 +11,6 @@ local cmd = vim.api.nvim_create_user_command
 
 require("config.keymaps-default")
 
--- Tmux navigator stuff
-map("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>", { desc = "Go to left window", remap = true })
-map("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>", { desc = "Go to lower window", remap = true })
-map("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>", { desc = "Go to upper window", remap = true })
-map("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>", { desc = "Go to right window", remap = true })
-
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 -- modified to center after moving
 map("n", "n", "'Nn'[v:searchforward].'zv'.'zz'", { expr = true, desc = "Next search result" })
@@ -27,25 +19,6 @@ map("o", "n", "'Nn'[v:searchforward].'zz'", { expr = true, desc = "Next search r
 map("n", "N", "'nN'[v:searchforward].'zv'.'zz'", { expr = true, desc = "Prev search result" })
 map("x", "N", "'nN'[v:searchforward].'zz'", { expr = true, desc = "Prev search result" })
 map("o", "N", "'nN'[v:searchforward].'zz'", { expr = true, desc = "Prev search result" })
-
--- lazy
-map("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
-
--- lazygit
-map("n", "<leader>gg", function()
-  Util.terminal({ "lazygit" }, { cwd = vim.loop.cwd(), esc_esc = false, ctrl_hjkl = false, border = "rounded" })
-end, { desc = "Lazygit" })
-
--- floating terminal
-local lazyterm = function()
-  Util.terminal(nil, { cwd = vim.loop.cwd(), border = "rounded", size = { width = 0.8, height = 0.8 } })
-end
-map("n", "<c-/>", lazyterm, { desc = "Terminal (root dir)" })
-map("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
-
--- Terminal Mappings
--- SINGLE ESC EXIT
--- map("t", "<esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 
 --
 --[[ General Keybinds ]]
@@ -123,11 +96,6 @@ map("n", "[w", diagnostic_goto("b", "WARN"), { desc = "Prev Warning" })
 -- Moving
 map("n", "<leader><", "<cmd>BufferLineMovePrev<CR>", { desc = "Move buffer left", silent = true })
 map("n", "<leader>>", "<cmd>BufferLineMoveNext<CR>", { desc = "Move buffer right", silent = true })
-
--- Closing
-map("n", "<leader>bd", function()
-  require("mini.bufremove").delete()
-end, { desc = "Close current buffer" })
 
 --[[ Plugins ]]
 
