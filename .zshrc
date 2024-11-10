@@ -70,6 +70,10 @@ export LESS='-RF'
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+bindkey "^[[3~" delete-char
+bindkey "^[[32;2u" magic-space
+bindkey "^[[1;5D" emacs-backward-word
+bindkey "^[[1;5C" emacs-forward-word
 
 # Aliases
 [[ ! -f ~/.bash_aliases ]] || source ~/.bash_aliases
