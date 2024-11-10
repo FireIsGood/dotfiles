@@ -191,8 +191,11 @@ end
 local function telescope_files()
   require("telescope.builtin").find_files({ cwd = vim.uv.cwd() })
 end
-local function telescope_oldfiles()
-  require("telescope.builtin").oldfiles({ cwd = vim.uv.cwd() })
+---@param global boolean
+local function telescope_oldfiles(global)
+  return function()
+    require("telescope.builtin").oldfiles(global and {} or { cwd = vim.uv.cwd() })
+  end
 end
 local function telescope_live_grep()
   vim.fn.system("git rev-parse --is-inside-work-tree")
@@ -205,9 +208,13 @@ local function telescope_live_grep()
 end
 map("n", "<leader><space>", telescope_git_fallback, { desc = "Find files (git/fallback, cwd)" })
 map("n", "<leader>ff", telescope_files, { desc = "Find files (cwd)" })
-map("n", "<leader>fo", telescope_oldfiles, { desc = "Find files (cwd)" })
-map("n", "<leader>f/", telescope_live_grep, { desc = "Live grep (cwd)" })
+map("n", "<leader>fo", telescope_oldfiles(false), { desc = "Find recent files (cwd)" })
+map("n", "<leader>fO", telescope_oldfiles(true), { desc = "Find recent files (global)" })
+map("n", "<leader>/", telescope_live_grep, { desc = "Live grep (cwd)" })
 map("n", "<leader>,", require("telescope.builtin").buffers, { desc = "Find buffers" })
+map("n", "<leader>fr", function()
+  require("telescope.builtin").lsp_references()
+end, { desc = "Find references" })
 
 -- Undo tree
 map("n", "<leader>fu", require("undotree").toggle, { desc = "Undo tree", silent = true })
