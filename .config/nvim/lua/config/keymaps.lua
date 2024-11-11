@@ -119,9 +119,6 @@ map("i", "<C-_>", require("Comment.api").toggle.linewise.current, { desc = "Togg
 -- Code action hover
 map("n", "gh", vim.lsp.buf.hover, { desc = "Hover" })
 
--- Easy Commands
-map("n", "<leader>t", "<cmd>Telescope commands<CR>", { desc = "Open easy commands", noremap = true })
-
 -- Git
 map({ "n" }, "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Preview this hunk" })
 
@@ -193,5 +190,6 @@ map({ "o", "x" }, "aq", function() vto.anyQuote("outer") end, { desc = "a quote"
 --
 --[[ Workspaces and Sessions ]]
 --
+
 wk.add({ "<leader>w", group = "+workspaces/sessions" })
 -- I'm using the spaceman.nvim (my plugin) defaults
