@@ -64,6 +64,9 @@ function superman() {
 	echo -e "Oh man, there's no Man or TLDR page!\nWelp, guess you're on your own!"
 }
 
+# Shorter xdg-open
+alias open='xdg-open'
+
 #* Program specific *#
 
 function ya() {
