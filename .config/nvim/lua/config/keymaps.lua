@@ -175,6 +175,14 @@ map("n", "<leader>fr", function()
   require("telescope.builtin").lsp_references()
 end, { desc = "Find references" })
 
+-- Snacks terminal
+map("n", "<c-/>", function()
+  Snacks.terminal()
+end, { desc = "Terminal (cwd)" })
+map("n", "<c-_>", function()
+  Snacks.terminal()
+end, { desc = "which_key_ignore" })
+
 -- Undo tree
 map("n", "<leader>fu", require("undotree").toggle, { desc = "Undo tree", silent = true })
 
