@@ -68,7 +68,8 @@ vim.api.nvim_create_autocmd({ "TermOpen" }, {
     vim.cmd("startinsert")
   end,
 })
--- Automatically enter insert mode in terminals
+
+-- Snacks terminal hack
 vim.api.nvim_create_autocmd({ "WinEnter" }, {
   pattern = "*",
   callback = function()
@@ -76,7 +77,7 @@ vim.api.nvim_create_autocmd({ "WinEnter" }, {
     if not is_term then
       return
     end
-    vim.cmd("startinsert")
+    vim.opt_local.filetype = "snacks_terminal"
   end,
 })
 
