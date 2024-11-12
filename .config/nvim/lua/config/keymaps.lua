@@ -171,6 +171,7 @@ map("n", "<leader>fo", telescope_oldfiles(false), { desc = "Find recent files (c
 map("n", "<leader>fO", telescope_oldfiles(true), { desc = "Find recent files (global)" })
 map("n", "<leader>/", telescope_live_grep, { desc = "Live grep (cwd)" })
 map("n", "<leader>,", require("telescope.builtin").buffers, { desc = "Find buffers" })
+map("n", '<leader>"', require("telescope.builtin").registers, { desc = "Find registers" })
 map("n", "<leader>fr", function()
   require("telescope.builtin").lsp_references()
 end, { desc = "Find references" })
