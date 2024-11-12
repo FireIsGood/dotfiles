@@ -1,3 +1,4 @@
 return {
-  "wuelnerdotexe/vim-astro",
+  { "wuelnerdotexe/vim-astro" },
+  { "vmchale/just-vim" },
 }
