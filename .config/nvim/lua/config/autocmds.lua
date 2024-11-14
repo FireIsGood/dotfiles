@@ -78,6 +78,7 @@ vim.api.nvim_create_autocmd({ "WinEnter" }, {
       return
     end
     vim.opt_local.filetype = "snacks_terminal"
+    vim.opt_local.colorcolumn = "0"
   end,
 })
 
