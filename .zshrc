@@ -58,7 +58,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Pagers
-export PAGER="nvim"
+export PAGER="less"
 export GIT_PAGER="less"
 export LESS='-RF'
 
