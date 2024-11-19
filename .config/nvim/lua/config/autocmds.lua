@@ -84,12 +84,7 @@ vim.api.nvim_create_autocmd({ "WinEnter" }, {
 
 -- Keep all folds
 local folds_augroup = vim.api.nvim_create_augroup("Folds", { clear = true })
-vim.api.nvim_create_autocmd("BufWritePost", {
-  group = folds_augroup,
-  command = "mkview | filetype detect | set foldmethod=manual",
-})
-
-vim.api.nvim_create_autocmd("QuitPre", {
+vim.api.nvim_create_autocmd({ "BufWritePost", "QuitPre" }, {
   group = folds_augroup,
   command = "mkview | filetype detect | set foldmethod=manual",
 })
