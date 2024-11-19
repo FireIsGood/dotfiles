@@ -45,8 +45,8 @@ map("i", "<C-c>", EscapeInNorm, { desc = "Escape and clear hlsearch" })
 
 -- More powerful J and K (use 6j/6k)
 -- Via Pseudometa (https://nanotipsforvim.prose.sh/motion-setup--hjkl-as-amplified-hjkl)
-map({ "n", "x" }, "<S-j>", "6j")
-map({ "n", "x" }, "<S-k>", "6k")
+map({ "n", "x" }, "<S-j>", "6gj")
+map({ "n", "x" }, "<S-k>", "6gk")
 
 -- Saner z.
 map("n", "z.", "zz", { desc = "Center this line", silent = true })
