@@ -8,6 +8,7 @@ opt.mouse = ""
 
 -- Scroll offset
 opt.scrolloff = 15
+opt.sidescrolloff = 2
 
 -- Stop hiding stuff in markdown
 opt.conceallevel = 0
