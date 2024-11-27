@@ -40,7 +40,7 @@ else
 fi
 
 # Pagers
-export PAGER="nvim"
+export PAGER="nvim +Man!"
 export GIT_PAGER="less"
 export LESS='-RF'
 
