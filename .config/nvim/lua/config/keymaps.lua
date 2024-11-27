@@ -32,16 +32,12 @@ map({ "n", "x" }, "<C-u>", "<C-u>zz", { desc = "Up half page", noremap = true })
 map({ "n", "x" }, "M", "J", { desc = "Merge" })
 
 -- Funny esc meme
-local EscapeInNorm = function()
-  vim.cmd("noh")
-  vim.api.nvim_feedkeys("", "n", true)
-end
-map("n", "<esc>", EscapeInNorm, {})
-map("n", "<C-c>", EscapeInNorm, {})
+map("n", "<esc>", "<CMD>noh<CR><ESC>", {})
+map("n", "<C-c>", "<CMD>noh<CR><ESC>", {})
 
 -- Remove annoying highlights on exiting insert mode
-map("i", "<esc>", EscapeInNorm, { desc = "Escape and clear hlsearch" })
-map("i", "<C-c>", EscapeInNorm, { desc = "Escape and clear hlsearch" })
+map("i", "<esc>", "<CMD>noh<CR><ESC>", { desc = "Escape and clear hlsearch" })
+map("i", "<C-c>", "<CMD>noh<CR><ESC>", { desc = "Escape and clear hlsearch" })
 
 -- More powerful J and K (use 6j/6k)
 -- Via Pseudometa (https://nanotipsforvim.prose.sh/motion-setup--hjkl-as-amplified-hjkl)
