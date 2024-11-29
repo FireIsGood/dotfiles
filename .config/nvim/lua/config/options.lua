@@ -35,6 +35,9 @@ opt.linebreak = true
 -- Use a register for the clipboard
 opt.clipboard = ""
 
+-- Use spelling
+opt.spell = true
+
 -- Funny title
 opt.title = true -- Use custom title
 opt.titlelen = 0 -- No limit on length
