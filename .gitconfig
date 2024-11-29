@@ -11,6 +11,9 @@ insteadOf = "https://github.com/"
 template = ~/.config/git/.git-commit-message
 gpgsign = true
 
+[diff]
+wsErrorHighlight = all
+
 [pull]
 rebase = true
 
