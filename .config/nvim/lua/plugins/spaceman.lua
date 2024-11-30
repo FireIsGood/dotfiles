@@ -26,7 +26,7 @@ return {
         return string.gsub(" " .. name, "%W%l", string.upper):sub(2) -- Name to title case
       end,
       telescope_opts = {
-        scroll_strategy = "limit",
+        scroll_strategy = "limit", -- Do not loop back when scrolling past end
       },
       hooks = {
         before_move = "Neotree close",
