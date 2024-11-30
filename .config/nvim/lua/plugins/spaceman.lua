@@ -1,8 +1,8 @@
 return {
-  {
-    -- dir = "~/Documents/Programming/spaceman.nvim",
-    "FireIsGood/spaceman.nvim",
-    opts = {
+  -- dir = "~/Documents/Programming/spaceman.nvim",
+  "FireIsGood/spaceman.nvim",
+  config = function()
+    require("spaceman").setup({
       workspaces = {
         "~",
         { "nvim-data", "~/.local/share/nvim" },
@@ -31,6 +31,6 @@ return {
       hooks = {
         before_move = "Neotree close",
       },
-    },
-  },
+    })
+  end,
 }
