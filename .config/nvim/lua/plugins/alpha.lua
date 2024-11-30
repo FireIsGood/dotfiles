@@ -18,8 +18,8 @@ end
 
 --- @param sc string
 --- @param txt string
---- @param keybind string|function? optional
---- @param keybind_opts table? optional
+--- @param keybind string|function?
+--- @param keybind_opts table?
 local function button(sc, txt, keybind, keybind_opts)
   local sc_ = sc:gsub("%s", "")
 
