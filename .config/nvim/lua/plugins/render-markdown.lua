@@ -4,8 +4,9 @@ return {
     render_modes = { "n", "c", "i" },
     heading = {
       position = "inline",
-      icons = { "𝟏 ", "𝟐 ", "𝟑 ", "𝟒 ", "𝟓 ", "𝟔 " },
+      icons = { " 󰎥 ", " 󰎨 ", " 󰎫 ", " 󰎲 ", " 󰎯 ", " 󰎴 " },
       width = "block",
+      right_pad = 1,
     },
     code = {
       language_name = false,
