@@ -6,7 +6,7 @@ return {
     document_highlight = { enabled = false },
     servers = {
       typos_lsp = {
-        config = "~/code/typos-lsp/crates/typos-lsp/tests/typos.toml",
+        config = vim.fn.stdpath("data") .. "/typos.toml",
         init_options = { diagnosticSeverity = "information" },
       },
       taplo = {
@@ -15,6 +15,7 @@ return {
         },
       },
       biome = {},
+      -- css_variables = {},
     },
   },
   init = function()
@@ -26,5 +27,6 @@ return {
     -- add a keymap
     -- keys[#keys + 1] = { "gh", vim.lsp.buf.hover, mode = "n" }
     -- require("lspconfig").biome.setup({})
+    -- require("lspconfig").css_variables.setup({})
   end,
 }
