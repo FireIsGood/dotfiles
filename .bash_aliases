@@ -175,6 +175,9 @@ function pasterm() {
 #         command man "$@"
 # }
 
+# YouTube playlist player
+alias ytplay='~/.config/bash_scripts/ytplay.sh'
+
 # Use neovim as man pager
 export MANPAGER='nvim +Man!'
 

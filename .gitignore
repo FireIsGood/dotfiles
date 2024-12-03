@@ -1,2 +1,3 @@
 # Files that should be local to the machine
 .config/lazygit/state.yml
+.config/bash_scripts/secrets.json
