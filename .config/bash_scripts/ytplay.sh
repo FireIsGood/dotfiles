@@ -3,7 +3,7 @@
 SECRET_FILE="$HOME/.config/bash_scripts/secrets.json"
 
 # Use FZF on the secret.json file finding the ".yt values"
-selected=$(jq -r ".yt | keys | .[]" <"$SECRET_FILE" | fzf --prompt=" YouTube Playlist  " --pointer="󰎇" --exit-0)
+selected=$(jq -r ".yt | keys | .[]" <"$SECRET_FILE" | fzf --prompt=" YouTube Playlist  " --border --pointer="󰎇" --exit-0)
 
 # Guard against early return
 if [[ -z $selected ]]; then
