@@ -21,5 +21,8 @@ if [[ $* == *-v* ]] || [[ $* == *--video* ]]; then
 	args=""
 fi
 
+# Format for the yt-dlp
+ytdlformats="bestaudio/best"
+
 clear
-mpv --shuffle --loop-playlist --term-osd-bar=yes --term-osd-bar-chars="[██.]" "$entry" "${args}"
+mpv --shuffle --loop-playlist --term-osd-bar=yes --term-osd-bar-chars="[██.]" "$entry" "${args}" --ytdl-format="$ytdlformats"
