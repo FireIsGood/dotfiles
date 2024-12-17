@@ -148,7 +148,7 @@ alias sl='sl -ael'
 alias matrix='konsole --profile=MATRIX --hide-menubar --hide-tabbar --fullscreen --separate -e cmatrix -u 10'
 
 # HTTP server on the fun port with no cache and automatically load HTML
-alias htp='http-server --port 1625 --ext html'
+alias htp='http-server --port 1625 --ext html --cors'
 alias htpc='htp -c-1'
 
 #* Functions *#
