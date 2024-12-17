@@ -155,13 +155,13 @@ alias htpc='htp -c-1'
 
 # Add a pasted file
 # Use with `paste file.txt` or `echo "words" | paste`
-function paste() {
+function wpaste() {
 	local file=${1:-/dev/stdin}
 	curl --data-binary "@${file} https://paste.rs"
 }
 
 # Remove a link
-function pasterm() {
+function wpasterm() {
 	local url=${1}
 	curl --request "DELETE" "${url}"
 }
