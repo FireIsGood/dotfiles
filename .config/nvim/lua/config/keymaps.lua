@@ -201,3 +201,7 @@ map({ "o", "x" }, "aq", function() vto.anyQuote("outer") end, { desc = "a quote"
 
 wk.add({ "<leader>w", group = "+workspaces/sessions" })
 -- I'm using the spaceman.nvim (my plugin) defaults
+map("n", "<leader>wi", function()
+  require("spaceman").api_save_session()
+  vim.notify("Saved session!")
+end, { desc = "Save session manually" })
