@@ -16,6 +16,9 @@ return {
       hooks = {
         before_move = "Neotree close",
       },
+      directory_function = function(path)
+        require("snacks").terminal.open(nil, { cwd = vim.fn.expandcmd(path) }) -- Bugged and won't enter insert mode
+      end,
     })
   end,
 }

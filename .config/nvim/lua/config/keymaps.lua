@@ -101,9 +101,6 @@ map("n", "<leader>>", "<cmd>BufferLineMoveNext<CR>", { desc = "Move buffer right
 -- Aerial
 map({ "n" }, "<leader>co", "<cmd>AerialToggle<CR>", { desc = "Open symbol outline" })
 
--- CMP
-map({ "n" }, "<C-y>", require("cmp").mapping.complete, { desc = "Select completion" })
-
 -- Oil (file management via buffer) BUT IT'S BROKEN RIGHT NOW
 map("n", "-", function()
   require("oil").open_float(nil)
@@ -134,46 +131,6 @@ map("n", "<M-;>", "<cmd>HarpoonBuffer 4<CR>", { desc = "Go to buffer 4" })
 wk.add({ "<leader>i", group = "+Snippets" })
 map("n", "<leader>ie", require("scissors").editSnippet, { desc = "Edit snippets" })
 map({ "n", "x" }, "<leader>ia", require("scissors").addNewSnippet, { desc = "Add a snippet" })
-
--- Telescope (fuzzy finder)
-local function telescope_git_fallback()
-  vim.fn.system("git rev-parse --is-inside-work-tree")
-  local is_git_repo = vim.v.shell_error == 0
-
-  if is_git_repo then
-    require("telescope.builtin").git_files()
-  else
-    require("telescope.builtin").find_files()
-  end
-end
-local function telescope_files()
-  require("telescope.builtin").find_files({ cwd = vim.uv.cwd() })
-end
----@param global boolean
-local function telescope_oldfiles(global)
-  return function()
-    require("telescope.builtin").oldfiles(global and {} or { cwd = vim.uv.cwd() })
-  end
-end
-local function telescope_live_grep()
-  vim.fn.system("git rev-parse --is-inside-work-tree")
-  local is_git_repo = vim.v.shell_error == 0
-  local git_root = vim.fn.fnamemodify(vim.fn.finddir(".git", ".;"), ":h")
-
-  require("telescope.builtin").live_grep({
-    cwd = is_git_repo and git_root or vim.uv.cwd(),
-  })
-end
-map("n", "<leader><space>", telescope_git_fallback, { desc = "Find files (git/fallback, cwd)" })
-map("n", "<leader>ff", telescope_files, { desc = "Find files (cwd)" })
-map("n", "<leader>fo", telescope_oldfiles(false), { desc = "Find recent files (cwd)" })
-map("n", "<leader>fO", telescope_oldfiles(true), { desc = "Find recent files (global)" })
-map("n", "<leader>/", telescope_live_grep, { desc = "Live grep (cwd)" })
-map("n", "<leader>,", require("telescope.builtin").buffers, { desc = "Find buffers" })
-map("n", '<leader>"', require("telescope.builtin").registers, { desc = "Find registers" })
-map("n", "<leader>fr", function()
-  require("telescope.builtin").lsp_references()
-end, { desc = "Find references" })
 
 -- Snacks terminal
 map("n", "<c-/>", function()

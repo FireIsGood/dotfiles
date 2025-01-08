@@ -4,7 +4,11 @@ return {
   opts = {
     -- lookForwardSmall = 0,
     -- lookForwardBig = 0,
-    useDefaultKeymaps = false,
-    notifyNotFound = false,
+    keymaps = {
+      useDefaults = false,
+    },
+    notify = {
+      whenObjectNotFound = false,
+    },
   },
 }
