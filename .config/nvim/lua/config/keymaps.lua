@@ -87,6 +87,9 @@ map("n", "[e", diagnostic_goto("b", "ERROR"), { desc = "Prev Error" })
 map("n", "]w", diagnostic_goto("f", "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto("b", "WARN"), { desc = "Prev Warning" })
 
+-- Terminal
+map("t", "<c-u>", "<cmd>resize +999<cr>", { desc = "Max terminal size" })
+
 --[[ Buffers ]]
 
 -- Moving
