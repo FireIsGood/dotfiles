@@ -4,7 +4,7 @@
 local opt = vim.opt
 
 -- Mouse for nerds
-opt.mouse = ""
+-- opt.mouse = ""
 
 -- Scroll offset
 opt.scrolloff = 15
