@@ -1,26 +1,11 @@
+local SECRET_CONFIG = require("SECRET_workspaces")
 return {
   -- dir = "~/Documents/Programming/spaceman.nvim",
   "FireIsGood/spaceman.nvim",
   config = function()
     require("spaceman").setup({
-      workspaces = {
-        "~",
-        { "nvim-data", "~/.local/share/nvim" },
-        { "config", "~/dotfiles/.config/nvim" },
-        "~/dotfiles",
-        "~/Desktop",
-        "~/Documents/College/Y2T3/CS 374",
-        "~/Documents/College/Y2T3/CS 290",
-        "~/Documents/College/Y3T1/CS 340",
-        "~/Documents/College/Y3T1/CS 381",
-        "~/Documents/College/Y3T1/CS 450",
-        "~/Documents/College/Y3T1/CS 474",
-        "/home/fireisgood/Documents/obsidian-monolith",
-      },
-      directories = {
-        "~/Documents/Programming", -- My actual folders
-        "~/Desktop/Somewhere", -- Showcase folders
-      },
+      workspaces = SECRET_CONFIG.workspaces,
+      directories = SECRET_CONFIG.directories,
       use_default_keymaps = true,
       rename_function = function(name)
         return string.gsub(" " .. name, "%W%l", string.upper):sub(2) -- Name to title case
