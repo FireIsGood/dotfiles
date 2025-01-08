@@ -205,3 +205,9 @@ map("n", "<leader>wi", function()
   require("spaceman").api_save_session()
   vim.notify("Saved session!")
 end, { desc = "Save session manually" })
+
+--
+--[[ Plugin dev stuff ]]
+--
+map("x", "<leader>ce", ":.lua<CR>", { desc = "Run selected code" })
+map("n", "<leader>cx", "<CMD>%lua<CR>", { desc = "Run entir file" })
