@@ -7,3 +7,6 @@ stow/
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
+
+# External copied file examples
+elsewhere/
