@@ -7,5 +7,14 @@ return {
   },
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
-  opts = { sources = { compat = { "emoji", "color_names" } } },
+  opts = {
+    sources = { compat = { "emoji", "color_names" } },
+    keymap = {
+      preset = "none",
+      ["<C-y>"] = { "select_and_accept" },
+
+      ["<C-p>"] = { "select_prev", "fallback" },
+      ["<C-n>"] = { "select_next", "fallback" },
+    },
+  },
 }
