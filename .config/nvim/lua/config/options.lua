@@ -10,7 +10,7 @@ local opt = vim.opt
 opt.scrolloff = 15
 opt.sidescrolloff = 2
 
--- Stop hiding stuff in markdown
+-- Stop hiding stuff in Markdown
 opt.conceallevel = 0
 opt.concealcursor = "n"
 
