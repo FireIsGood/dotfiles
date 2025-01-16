@@ -49,15 +49,14 @@ local ft_remap = {
   ["mdx"] = "markdown",
 }
 
-for base, remap in pairs(ft_remap) do
-  au({ "BufNewFile", "BufRead" }, {
-    pattern = "*." .. base,
-    callback = function()
-      -- vim.bo.filetype = remap
-      vim.cmd("set ft=" .. remap)
-    end,
-  })
-end
+local filename_remap = {
+  ["Berksfile"] = "ruby",
+}
+
+vim.filetype.add({
+  extension = ft_remap,
+  filename = filename_remap,
+})
 
 -- Set up terminal buffers
 vim.api.nvim_create_autocmd({ "TermOpen" }, {
