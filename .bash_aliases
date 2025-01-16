@@ -107,7 +107,7 @@ alias j='just'
 
 # YT-DLP
 alias yt='yt-dlp --embed-metadata'
-alias yta='yt-dlp --extract-audio --format ba/b --sponsorblock-remove all'
+alias yta='yt-dlp --embed-metadata --extract-audio --format ba/b --sponsorblock-remove all'
 function ytb() {
 	'yt $@'
 	'yta $@'
