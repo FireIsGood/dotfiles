@@ -168,3 +168,43 @@ end, { desc = "Save session manually" })
 --
 map("x", "<leader>ce", ":.lua<CR>", { desc = "Run selected code" })
 map("n", "<leader>cx", "<CMD>%lua<CR>", { desc = "Run entir file" })
+
+--- FzfLua (fuzzy finder)
+local function fzf_git_fallback()
+  vim.fn.system("git rev-parse --is-inside-work-tree")
+  local is_git_repo = vim.v.shell_error == 0
+
+  if is_git_repo then
+    print("We are git")
+    require("fzf-lua").git_files()
+  else
+    print("We are not git")
+    require("fzf-lua").files()
+  end
+end
+---@param global boolean
+local function fzf_files(global)
+  return function()
+    require("fzf-lua").files(global and { cwd = "~/" } or {})
+  end
+end
+---@param global boolean
+local function fzf_oldfiles(global)
+  return function()
+    require("fzf-lua").oldfiles({ cwd_only = not global })
+  end
+end
+map("n", "<leader><space>", fzf_git_fallback, { desc = "Find files (git/fallback, cwd)" })
+map("n", "<leader>ff", fzf_files(false), { desc = "Find files (cwd)" })
+map("n", "<leader>fF", fzf_files(true), { desc = "Find files (global)" })
+map("n", "<leader>fo", fzf_oldfiles(false), { desc = "Find recent files (cwd)" })
+map("n", "<leader>fO", fzf_oldfiles(true), { desc = "Find recent files (global)" })
+map("n", "<leader>/", require("fzf-lua").live_grep, { desc = "Live grep (cwd)" })
+map("n", "<leader>,", require("fzf-lua").buffers, { desc = "Find buffers" })
+map("n", '<leader>"', require("fzf-lua").registers, { desc = "Find registers" })
+map("n", "<leader>fr", require("fzf-lua").lsp_references, { desc = "Find references" })
+
+-- Snacks terminal
+map("n", "<c-/>", function()
+  Snacks.terminal()
+end, { desc = "Terminal (cwd)" })
