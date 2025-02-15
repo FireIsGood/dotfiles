@@ -16,5 +16,6 @@ return {
     dash = {
       width = 120,
     },
+    html = { comment = { conceal = false } },
   },
 }
