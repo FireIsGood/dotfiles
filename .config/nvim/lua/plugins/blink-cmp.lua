@@ -8,7 +8,10 @@ return {
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
-    sources = { compat = { "emoji", "color_names" } },
+    sources = {
+      compat = { "emoji", "color_names" },
+      providers = { snippets = { opts = { search_paths = { "~/.config/nvim/snippets" } } } },
+    },
     keymap = {
       preset = "none",
       ["<C-y>"] = { "select_and_accept" },
