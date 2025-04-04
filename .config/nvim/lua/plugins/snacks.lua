@@ -5,5 +5,6 @@ return {
     words = { enabled = false },
     scroll = { enabled = false },
     indent = { animate = { enabled = false } },
+    notifier = { top_down = false },
   },
 }
