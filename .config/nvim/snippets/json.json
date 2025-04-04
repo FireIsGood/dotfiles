@@ -1,0 +1,1 @@
+{"prettierrc":{"body":["{","  \"printWidth\": 120,","  \"trailingComma\": \"es5\",","  \"proseWrap\": \"always\",","  \"plugins\": [\"prettier-plugin-astro\", \"prettier-plugin-svelte\"]","}"],"prefix":"prettierrc"}}
