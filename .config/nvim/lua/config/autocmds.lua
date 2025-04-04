@@ -20,6 +20,8 @@ local color_columns = {
   ["svelte"] = "120", -- Based on prettier settings!
   ["lua"] = "120",
   ["rust"] = "100",
+  ["typst"] = "120",
+  ["js"] = "120", -- Based on prettier settings!
 }
 
 for type, width in pairs(color_columns) do
